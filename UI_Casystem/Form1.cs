@@ -1,8 +1,8 @@
 namespace UI_Casystem
 {
-    public partial class Form1 : Form
+    public partial class CAsystem : Form
     {
-        public Form1()
+        public CAsystem()
         {
             InitializeComponent();
         }

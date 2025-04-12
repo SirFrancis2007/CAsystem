@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            Registrarse = new Label();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            button1 = new Button();
-            linkLabel1 = new LinkLabel();
-            TxtBoxName = new TextBox();
-            TextBoxEmail = new TextBox();
             TextBoxPassworld = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();

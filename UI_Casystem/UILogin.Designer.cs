@@ -31,28 +31,22 @@
             panel1 = new Panel();
             TextBoxPassworld = new TextBox();
             TextBoxEmail = new TextBox();
-            TxtBoxName = new TextBox();
             linkLabel1 = new LinkLabel();
-            button1 = new Button();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            BtnIngresar = new Button();
             Registrarse = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(224, 224, 224);
+            panel1.BackColor = Color.FromArgb(27, 31, 39);
             panel1.Controls.Add(TextBoxPassworld);
             panel1.Controls.Add(TextBoxEmail);
-            panel1.Controls.Add(TxtBoxName);
             panel1.Controls.Add(linkLabel1);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(BtnIngresar);
             panel1.Controls.Add(Registrarse);
+            panel1.Font = new Font("Arial", 12F, FontStyle.Bold);
+            panel1.ForeColor = Color.White;
             panel1.Location = new Point(256, 58);
             panel1.Name = "panel1";
             panel1.Size = new Size(414, 417);
@@ -60,91 +54,73 @@
             // 
             // TextBoxPassworld
             // 
-            TextBoxPassworld.Location = new Point(33, 263);
+            TextBoxPassworld.BackColor = Color.FromArgb(29, 31, 33);
+            TextBoxPassworld.BorderStyle = BorderStyle.None;
+            TextBoxPassworld.ForeColor = Color.White;
+            TextBoxPassworld.Location = new Point(32, 226);
+            TextBoxPassworld.Multiline = true;
             TextBoxPassworld.Name = "TextBoxPassworld";
-            TextBoxPassworld.Size = new Size(341, 23);
+            TextBoxPassworld.Size = new Size(341, 32);
             TextBoxPassworld.TabIndex = 8;
-            TextBoxPassworld.Text = "*********";
+            TextBoxPassworld.Text = "Contraseña";
             // 
             // TextBoxEmail
             // 
-            TextBoxEmail.Location = new Point(32, 184);
+            TextBoxEmail.BackColor = Color.FromArgb(29, 31, 33);
+            TextBoxEmail.BorderStyle = BorderStyle.None;
+            TextBoxEmail.ForeColor = Color.White;
+            TextBoxEmail.Location = new Point(32, 125);
+            TextBoxEmail.Multiline = true;
             TextBoxEmail.Name = "TextBoxEmail";
-            TextBoxEmail.Size = new Size(347, 23);
+            TextBoxEmail.Size = new Size(347, 35);
             TextBoxEmail.TabIndex = 7;
             TextBoxEmail.Text = "Email";
-            // 
-            // TxtBoxName
-            // 
-            TxtBoxName.Location = new Point(32, 91);
-            TxtBoxName.Name = "TxtBoxName";
-            TxtBoxName.Size = new Size(348, 23);
-            TxtBoxName.TabIndex = 6;
-            TxtBoxName.Text = "Nombre";
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(125, 378);
+            linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkLabel1.LinkColor = Color.White;
+            linkLabel1.Location = new Point(93, 379);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(164, 15);
+            linkLabel1.Size = new Size(243, 19);
             linkLabel1.TabIndex = 5;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "¿No tienes cuenta, Registrate?";
             // 
-            // button1
+            // BtnIngresar
             // 
-            button1.Location = new Point(32, 312);
-            button1.Name = "button1";
-            button1.Size = new Size(349, 32);
-            button1.TabIndex = 4;
-            button1.Text = "Ingresar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(32, 234);
-            label3.Name = "label3";
-            label3.Size = new Size(67, 15);
-            label3.TabIndex = 3;
-            label3.Text = "Contraseña";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(32, 146);
-            label2.Name = "label2";
-            label2.Size = new Size(36, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Email";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(32, 52);
-            label1.Name = "label1";
-            label1.Size = new Size(51, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Nombre";
+            BtnIngresar.BackColor = Color.FromArgb(46, 55, 78);
+            BtnIngresar.FlatStyle = FlatStyle.Popup;
+            BtnIngresar.ForeColor = Color.White;
+            BtnIngresar.Location = new Point(32, 312);
+            BtnIngresar.Name = "BtnIngresar";
+            BtnIngresar.Size = new Size(349, 32);
+            BtnIngresar.TabIndex = 4;
+            BtnIngresar.Text = "Ingresar";
+            BtnIngresar.UseVisualStyleBackColor = false;
             // 
             // Registrarse
             // 
             Registrarse.AutoSize = true;
-            Registrarse.Location = new Point(173, 22);
+            Registrarse.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Registrarse.ForeColor = Color.White;
+            Registrarse.Location = new Point(148, 14);
             Registrarse.Name = "Registrarse";
-            Registrarse.Size = new Size(49, 15);
+            Registrarse.Size = new Size(125, 33);
             Registrarse.TabIndex = 0;
             Registrarse.Text = "Ingresar";
             // 
-            // Login
+            // UILogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(27, 31, 39);
             ClientSize = new Size(914, 550);
             Controls.Add(panel1);
-            Name = "Login";
+            Name = "UILogin";
             Text = "Login";
+            Load += UILogin_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -155,12 +131,8 @@
         private Panel panel1;
         private TextBox TextBoxPassworld;
         private TextBox TextBoxEmail;
-        private TextBox TxtBoxName;
         private LinkLabel linkLabel1;
-        private Button button1;
-        private Label label3;
-        private Label label2;
-        private Label label1;
+        private Button BtnIngresar;
         private Label Registrarse;
     }
 }

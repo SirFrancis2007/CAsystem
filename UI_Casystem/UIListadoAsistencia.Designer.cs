@@ -30,12 +30,12 @@
         {
             dataGridView1 = new DataGridView();
             panel1 = new Panel();
+            linkLabel3 = new LinkLabel();
             pictureBox1 = new PictureBox();
             label3 = new Label();
             linkLabel2 = new LinkLabel();
             linkLabel1 = new LinkLabel();
             label1 = new Label();
-            linkLabel3 = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -45,6 +45,8 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = Color.FromArgb(24, 28, 35);
+            dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(227, 88);
             dataGridView1.Name = "dataGridView1";
@@ -54,7 +56,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(224, 224, 224);
+            panel1.BackColor = Color.FromArgb(40, 46, 57);
             panel1.Controls.Add(linkLabel3);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label3);
@@ -64,6 +66,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(201, 554);
             panel1.TabIndex = 4;
+            // 
+            // linkLabel3
+            // 
+            linkLabel3.AutoSize = true;
+            linkLabel3.Font = new Font("Arial", 12F, FontStyle.Bold);
+            linkLabel3.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkLabel3.LinkColor = Color.White;
+            linkLabel3.Location = new Point(31, 202);
+            linkLabel3.Name = "linkLabel3";
+            linkLabel3.Size = new Size(143, 19);
+            linkLabel3.TabIndex = 4;
+            linkLabel3.TabStop = true;
+            linkLabel3.Text = "Listado de Tablas";
             // 
             // pictureBox1
             // 
@@ -76,18 +91,23 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Arial", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(52, 526);
             label3.Name = "label3";
-            label3.Size = new Size(87, 15);
+            label3.Size = new Size(88, 14);
             label3.TabIndex = 2;
             label3.Text = "Copyrigth 2025";
             // 
             // linkLabel2
             // 
             linkLabel2.AutoSize = true;
-            linkLabel2.Location = new Point(24, 478);
+            linkLabel2.Font = new Font("Arial", 12F, FontStyle.Bold);
+            linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkLabel2.LinkColor = Color.White;
+            linkLabel2.Location = new Point(45, 480);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(75, 15);
+            linkLabel2.Size = new Size(112, 19);
             linkLabel2.TabIndex = 1;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Cerrar sesion";
@@ -95,9 +115,12 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(24, 154);
+            linkLabel1.Font = new Font("Arial", 12F, FontStyle.Bold);
+            linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkLabel1.LinkColor = Color.White;
+            linkLabel1.Location = new Point(31, 159);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(105, 15);
+            linkLabel1.Size = new Size(152, 19);
             linkLabel1.TabIndex = 0;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Agregar Asistencia";
@@ -105,26 +128,19 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(227, 36);
             label1.Name = "label1";
-            label1.Size = new Size(171, 15);
+            label1.Size = new Size(286, 18);
             label1.TabIndex = 6;
             label1.Text = "Nombre de lista: {nombre lista}";
-            // 
-            // linkLabel3
-            // 
-            linkLabel3.AutoSize = true;
-            linkLabel3.Location = new Point(27, 191);
-            linkLabel3.Name = "linkLabel3";
-            linkLabel3.Size = new Size(96, 15);
-            linkLabel3.TabIndex = 4;
-            linkLabel3.TabStop = true;
-            linkLabel3.Text = "Listado de Tablas";
             // 
             // UIListadoAsistencia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(27, 31, 39);
             ClientSize = new Size(914, 550);
             Controls.Add(label1);
             Controls.Add(dataGridView1);

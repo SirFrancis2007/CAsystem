@@ -1,6 +1,6 @@
 ﻿namespace UI_Casystem
 {
-    partial class Form2
+    partial class UIRegistro
     {
         /// <summary>
         /// Required designer variable.
@@ -30,113 +30,115 @@
         {
             panel1 = new Panel();
             TextBoxPassworld = new TextBox();
+            TextBoxEmail = new TextBox();
+            TxtBoxName = new TextBox();
+            linkLabel1 = new LinkLabel();
+            BtnIngresar = new Button();
+            Registrarse = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(224, 224, 224);
+            panel1.BackColor = Color.FromArgb(27, 31, 39);
             panel1.Controls.Add(TextBoxPassworld);
             panel1.Controls.Add(TextBoxEmail);
             panel1.Controls.Add(TxtBoxName);
             panel1.Controls.Add(linkLabel1);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(BtnIngresar);
             panel1.Controls.Add(Registrarse);
-            panel1.Location = new Point(254, 58);
+            panel1.Font = new Font("Arial", 12F, FontStyle.Bold);
+            panel1.ForeColor = Color.White;
+            panel1.Location = new Point(250, 67);
             panel1.Name = "panel1";
             panel1.Size = new Size(414, 417);
-            panel1.TabIndex = 0;
+            panel1.TabIndex = 2;
+            panel1.Paint += panel1_Paint;
             // 
-            // Registrarse
+            // TextBoxPassworld
             // 
-            Registrarse.AutoSize = true;
-            Registrarse.Location = new Point(173, 22);
-            Registrarse.Name = "Registrarse";
-            Registrarse.Size = new Size(64, 15);
-            Registrarse.TabIndex = 0;
-            Registrarse.Text = "Registrarse";
+            TextBoxPassworld.BackColor = Color.FromArgb(29, 31, 33);
+            TextBoxPassworld.BorderStyle = BorderStyle.None;
+            TextBoxPassworld.ForeColor = Color.White;
+            TextBoxPassworld.Location = new Point(33, 263);
+            TextBoxPassworld.Multiline = true;
+            TextBoxPassworld.Name = "TextBoxPassworld";
+            TextBoxPassworld.Size = new Size(341, 32);
+            TextBoxPassworld.TabIndex = 8;
+            TextBoxPassworld.Text = "Contraseña";
+            TextBoxPassworld.TextAlign = HorizontalAlignment.Center;
             // 
-            // label1
+            // TextBoxEmail
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(32, 52);
-            label1.Name = "label1";
-            label1.Size = new Size(51, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Nombre";
+            TextBoxEmail.BackColor = Color.FromArgb(29, 31, 33);
+            TextBoxEmail.BorderStyle = BorderStyle.None;
+            TextBoxEmail.ForeColor = Color.White;
+            TextBoxEmail.Location = new Point(32, 180);
+            TextBoxEmail.Multiline = true;
+            TextBoxEmail.Name = "TextBoxEmail";
+            TextBoxEmail.Size = new Size(347, 35);
+            TextBoxEmail.TabIndex = 7;
+            TextBoxEmail.Text = "Email";
             // 
-            // label2
+            // TxtBoxName
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(32, 146);
-            label2.Name = "label2";
-            label2.Size = new Size(36, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Email";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(32, 234);
-            label3.Name = "label3";
-            label3.Size = new Size(67, 15);
-            label3.TabIndex = 3;
-            label3.Text = "Contraseña";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(32, 312);
-            button1.Name = "button1";
-            button1.Size = new Size(349, 32);
-            button1.TabIndex = 4;
-            button1.Text = "Registrarse";
-            button1.UseVisualStyleBackColor = true;
+            TxtBoxName.BackColor = Color.FromArgb(29, 31, 33);
+            TxtBoxName.BorderStyle = BorderStyle.None;
+            TxtBoxName.ForeColor = Color.White;
+            TxtBoxName.Location = new Point(32, 91);
+            TxtBoxName.Multiline = true;
+            TxtBoxName.Name = "TxtBoxName";
+            TxtBoxName.RightToLeft = RightToLeft.No;
+            TxtBoxName.Size = new Size(348, 37);
+            TxtBoxName.TabIndex = 6;
+            TxtBoxName.Text = "Nombre";
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(136, 375);
+            linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkLabel1.LinkColor = Color.White;
+            linkLabel1.Location = new Point(93, 379);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(146, 15);
+            linkLabel1.Size = new Size(218, 19);
             linkLabel1.TabIndex = 5;
             linkLabel1.TabStop = true;
-            linkLabel1.Text = "¿Ya tienes cuenta, Ingresá?";
+            linkLabel1.Text = "¿Ya tienes cuenta, Ingresa?";
             // 
-            // TxtBoxName
+            // BtnIngresar
             // 
-            TxtBoxName.Location = new Point(32, 91);
-            TxtBoxName.Name = "TxtBoxName";
-            TxtBoxName.Size = new Size(348, 23);
-            TxtBoxName.TabIndex = 6;
-            TxtBoxName.Text = "Nombre";
+            BtnIngresar.BackColor = Color.FromArgb(46, 55, 78);
+            BtnIngresar.FlatStyle = FlatStyle.Popup;
+            BtnIngresar.ForeColor = Color.White;
+            BtnIngresar.Location = new Point(32, 312);
+            BtnIngresar.Name = "BtnIngresar";
+            BtnIngresar.Size = new Size(349, 32);
+            BtnIngresar.TabIndex = 4;
+            BtnIngresar.Text = "Ingresar";
+            BtnIngresar.UseVisualStyleBackColor = false;
             // 
-            // TextBoxEmail
+            // Registrarse
             // 
-            TextBoxEmail.Location = new Point(32, 184);
-            TextBoxEmail.Name = "TextBoxEmail";
-            TextBoxEmail.Size = new Size(347, 23);
-            TextBoxEmail.TabIndex = 7;
-            TextBoxEmail.Text = "Email";
+            Registrarse.AutoSize = true;
+            Registrarse.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Registrarse.ForeColor = Color.White;
+            Registrarse.Location = new Point(148, 14);
+            Registrarse.Name = "Registrarse";
+            Registrarse.Size = new Size(127, 33);
+            Registrarse.TabIndex = 0;
+            Registrarse.Text = "Registro";
             // 
-            // TextBoxPassworld
-            // 
-            TextBoxPassworld.Location = new Point(33, 263);
-            TextBoxPassworld.Name = "TextBoxPassworld";
-            TextBoxPassworld.Size = new Size(341, 23);
-            TextBoxPassworld.TabIndex = 8;
-            TextBoxPassworld.Text = "*********";
-            // 
-            // Form2
+            // UIRegistro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(27, 31, 39);
             ClientSize = new Size(914, 550);
             Controls.Add(panel1);
-            Name = "Form2";
-            Text = "Form2";
+            MaximizeBox = false;
+            Name = "UIRegistro";
+            Text = "UIRegistro";
+            Load += UIRegistro_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -145,14 +147,11 @@
         #endregion
 
         private Panel panel1;
-        private LinkLabel linkLabel1;
-        private Button button1;
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private Label Registrarse;
         private TextBox TextBoxPassworld;
         private TextBox TextBoxEmail;
         private TextBox TxtBoxName;
+        private LinkLabel linkLabel1;
+        private Button BtnIngresar;
+        private Label Registrarse;
     }
 }

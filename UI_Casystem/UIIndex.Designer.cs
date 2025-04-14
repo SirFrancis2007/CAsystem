@@ -29,16 +29,14 @@
         private void InitializeComponent()
         {
             Title = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            btnIngresar = new Button();
+            BtnRegistro = new Button();
             linkLabel1 = new LinkLabel();
             linkLabel2 = new LinkLabel();
             label2 = new Label();
             panel1 = new Panel();
             linkLabel3 = new LinkLabel();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // Title
@@ -46,52 +44,54 @@
             Title.AutoSize = true;
             Title.BackColor = Color.Transparent;
             Title.FlatStyle = FlatStyle.Popup;
-            Title.Font = new Font("Malgun Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Title.Location = new Point(373, 119);
+            Title.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Title.ForeColor = Color.White;
+            Title.Location = new Point(369, 143);
             Title.Name = "Title";
-            Title.Size = new Size(152, 40);
+            Title.Size = new Size(191, 50);
             Title.TabIndex = 0;
             Title.Text = "CAsystem";
             Title.TextAlign = ContentAlignment.MiddleCenter;
             Title.Click += label1_Click;
             // 
-            // button1
+            // btnIngresar
             // 
-            button1.BackColor = Color.FromArgb(33, 90, 167);
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Verdana", 11.25F);
-            button1.ForeColor = Color.GhostWhite;
-            button1.Location = new Point(422, 294);
-            button1.Name = "button1";
-            button1.Size = new Size(186, 35);
-            button1.TabIndex = 2;
-            button1.Text = "Inicio Sesion";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnIngresar.BackColor = Color.FromArgb(48, 89, 233);
+            btnIngresar.FlatStyle = FlatStyle.Popup;
+            btnIngresar.Font = new Font("Verdana", 11.25F);
+            btnIngresar.ForeColor = Color.GhostWhite;
+            btnIngresar.Location = new Point(373, 307);
+            btnIngresar.Name = "btnIngresar";
+            btnIngresar.Size = new Size(186, 35);
+            btnIngresar.TabIndex = 2;
+            btnIngresar.Text = "Inicio Sesion";
+            btnIngresar.UseVisualStyleBackColor = false;
+            btnIngresar.Click += button1_Click;
             // 
-            // button2
+            // BtnRegistro
             // 
-            button2.BackColor = Color.FromArgb(33, 90, 167);
-            button2.FlatStyle = FlatStyle.Popup;
-            button2.Font = new Font("Verdana", 11.25F);
-            button2.ForeColor = Color.GhostWhite;
-            button2.Location = new Point(421, 233);
-            button2.Name = "button2";
-            button2.Size = new Size(187, 35);
-            button2.TabIndex = 3;
-            button2.Text = "Registrarse";
-            button2.UseVisualStyleBackColor = false;
+            BtnRegistro.BackColor = Color.FromArgb(48, 89, 233);
+            BtnRegistro.FlatStyle = FlatStyle.Popup;
+            BtnRegistro.Font = new Font("Verdana", 11.25F);
+            BtnRegistro.ForeColor = Color.GhostWhite;
+            BtnRegistro.Location = new Point(373, 249);
+            BtnRegistro.Name = "BtnRegistro";
+            BtnRegistro.Size = new Size(187, 35);
+            BtnRegistro.TabIndex = 3;
+            BtnRegistro.Text = "Registrarse";
+            BtnRegistro.UseVisualStyleBackColor = false;
             // 
             // linkLabel1
             // 
-            linkLabel1.ActiveLinkColor = Color.FromArgb(255, 128, 0);
+            linkLabel1.ActiveLinkColor = Color.FromArgb(0, 192, 0);
             linkLabel1.AutoSize = true;
             linkLabel1.BackColor = Color.Transparent;
-            linkLabel1.DisabledLinkColor = Color.Black;
+            linkLabel1.DisabledLinkColor = Color.FromArgb(176, 176, 176);
             linkLabel1.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
+            linkLabel1.ForeColor = Color.FromArgb(176, 176, 176);
             linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
-            linkLabel1.LinkColor = Color.Black;
-            linkLabel1.Location = new Point(51, 12);
+            linkLabel1.LinkColor = SystemColors.ButtonFace;
+            linkLabel1.Location = new Point(190, 12);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(123, 13);
             linkLabel1.TabIndex = 4;
@@ -100,14 +100,15 @@
             // 
             // linkLabel2
             // 
-            linkLabel2.ActiveLinkColor = Color.FromArgb(255, 128, 0);
+            linkLabel2.ActiveLinkColor = Color.FromArgb(0, 192, 0);
             linkLabel2.AutoSize = true;
             linkLabel2.BackColor = Color.Transparent;
-            linkLabel2.DisabledLinkColor = Color.Black;
+            linkLabel2.DisabledLinkColor = Color.FromArgb(176, 176, 176);
             linkLabel2.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
+            linkLabel2.ForeColor = Color.FromArgb(176, 176, 176);
             linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;
-            linkLabel2.LinkColor = Color.Black;
-            linkLabel2.Location = new Point(200, 11);
+            linkLabel2.LinkColor = SystemColors.ButtonFace;
+            linkLabel2.Location = new Point(371, 12);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(61, 13);
             linkLabel2.TabIndex = 5;
@@ -117,58 +118,49 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(792, 10);
+            label2.Font = new Font("Arial", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(176, 176, 176);
+            label2.Location = new Point(636, 12);
             label2.Name = "label2";
-            label2.Size = new Size(87, 15);
+            label2.Size = new Size(88, 14);
             label2.TabIndex = 7;
             label2.Text = "Copyrigth 2025";
             // 
             // panel1
             // 
+            panel1.Controls.Add(linkLabel3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(linkLabel2);
             panel1.Controls.Add(linkLabel1);
             panel1.Location = new Point(2, 502);
             panel1.Name = "panel1";
-            panel1.Size = new Size(911, 36);
+            panel1.Size = new Size(957, 36);
             panel1.TabIndex = 8;
             // 
             // linkLabel3
             // 
-            linkLabel3.ActiveLinkColor = Color.FromArgb(255, 128, 0);
             linkLabel3.AutoSize = true;
-            linkLabel3.BackColor = Color.Transparent;
-            linkLabel3.DisabledLinkColor = Color.Black;
-            linkLabel3.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
+            linkLabel3.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             linkLabel3.LinkBehavior = LinkBehavior.NeverUnderline;
-            linkLabel3.LinkColor = Color.Black;
-            linkLabel3.Location = new Point(794, 24);
+            linkLabel3.LinkColor = Color.FromArgb(176, 176, 176);
+            linkLabel3.Location = new Point(490, 12);
             linkLabel3.Name = "linkLabel3";
             linkLabel3.Size = new Size(91, 13);
             linkLabel3.TabIndex = 8;
             linkLabel3.TabStop = true;
             linkLabel3.Text = "Sobre CAsystem";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(257, 227);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(140, 106);
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
-            // 
             // CAsystem
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(239, 239, 239);
-            ClientSize = new Size(914, 550);
-            Controls.Add(pictureBox1);
-            Controls.Add(linkLabel3);
+            AutoSize = true;
+            BackColor = Color.FromArgb(27, 31, 39);
+            ClientSize = new Size(954, 561);
             Controls.Add(panel1);
             Controls.Add(Title);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(BtnRegistro);
+            Controls.Add(btnIngresar);
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             Name = "CAsystem";
@@ -176,7 +168,6 @@
             Load += CAsystem_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -184,13 +175,12 @@
         #endregion
 
         private Label Title;
-        private Button button1;
-        private Button button2;
+        private Button btnIngresar;
+        private Button BtnRegistro;
         private LinkLabel linkLabel1;
         private LinkLabel linkLabel2;
         private Label label2;
         private Panel panel1;
         private LinkLabel linkLabel3;
-        private PictureBox pictureBox1;
     }
 }

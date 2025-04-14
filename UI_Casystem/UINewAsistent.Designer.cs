@@ -29,123 +29,115 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            checkBox1 = new CheckBox();
             TextBoxEmail = new TextBox();
             TxtBoxName = new TextBox();
             linkLabel1 = new LinkLabel();
-            button1 = new Button();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            BtnRegistro = new Button();
             Registrarse = new Label();
-            checkBox1 = new CheckBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(224, 224, 224);
+            panel1.BackColor = Color.FromArgb(27, 31, 39);
             panel1.Controls.Add(checkBox1);
             panel1.Controls.Add(TextBoxEmail);
             panel1.Controls.Add(TxtBoxName);
             panel1.Controls.Add(linkLabel1);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(BtnRegistro);
             panel1.Controls.Add(Registrarse);
             panel1.Location = new Point(250, 67);
             panel1.Name = "panel1";
             panel1.Size = new Size(414, 417);
             panel1.TabIndex = 1;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.CheckAlign = ContentAlignment.MiddleRight;
+            checkBox1.FlatStyle = FlatStyle.Popup;
+            checkBox1.Font = new Font("Arial", 12F, FontStyle.Bold);
+            checkBox1.ForeColor = Color.White;
+            checkBox1.ImageAlign = ContentAlignment.MiddleLeft;
+            checkBox1.Location = new Point(32, 244);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(105, 23);
+            checkBox1.TabIndex = 8;
+            checkBox1.Text = "Asistencia";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
             // TextBoxEmail
             // 
+            TextBoxEmail.BackColor = Color.FromArgb(29, 31, 33);
+            TextBoxEmail.BorderStyle = BorderStyle.None;
+            TextBoxEmail.Font = new Font("Arial", 12F, FontStyle.Bold);
+            TextBoxEmail.ForeColor = Color.White;
             TextBoxEmail.Location = new Point(32, 184);
             TextBoxEmail.Name = "TextBoxEmail";
-            TextBoxEmail.Size = new Size(347, 23);
+            TextBoxEmail.Size = new Size(347, 19);
             TextBoxEmail.TabIndex = 7;
+            TextBoxEmail.Text = "Departamento";
             // 
             // TxtBoxName
             // 
+            TxtBoxName.BackColor = Color.FromArgb(29, 31, 33);
+            TxtBoxName.BorderStyle = BorderStyle.None;
+            TxtBoxName.Font = new Font("Arial", 12F, FontStyle.Bold);
+            TxtBoxName.ForeColor = Color.White;
             TxtBoxName.Location = new Point(32, 91);
             TxtBoxName.Name = "TxtBoxName";
-            TxtBoxName.Size = new Size(348, 23);
+            TxtBoxName.Size = new Size(348, 19);
             TxtBoxName.TabIndex = 6;
             TxtBoxName.Text = "Nombre";
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(136, 375);
+            linkLabel1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkLabel1.LinkColor = Color.White;
+            linkLabel1.Location = new Point(107, 376);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(146, 15);
+            linkLabel1.Size = new Size(218, 19);
             linkLabel1.TabIndex = 5;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "¿Ya tienes cuenta, Ingresá?";
             // 
-            // button1
+            // BtnRegistro
             // 
-            button1.Location = new Point(32, 312);
-            button1.Name = "button1";
-            button1.Size = new Size(349, 32);
-            button1.TabIndex = 4;
-            button1.Text = "Registrarse";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(32, 234);
-            label3.Name = "label3";
-            label3.Size = new Size(60, 15);
-            label3.TabIndex = 3;
-            label3.Text = "Asistencia";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(32, 146);
-            label2.Name = "label2";
-            label2.Size = new Size(83, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Departamento";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(32, 52);
-            label1.Name = "label1";
-            label1.Size = new Size(51, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Nombre";
+            BtnRegistro.BackColor = Color.FromArgb(46, 55, 78);
+            BtnRegistro.FlatStyle = FlatStyle.Popup;
+            BtnRegistro.Font = new Font("Arial", 11.25F, FontStyle.Bold);
+            BtnRegistro.ForeColor = Color.White;
+            BtnRegistro.Location = new Point(32, 312);
+            BtnRegistro.Name = "BtnRegistro";
+            BtnRegistro.Size = new Size(349, 32);
+            BtnRegistro.TabIndex = 4;
+            BtnRegistro.Text = "Registrarse";
+            BtnRegistro.UseVisualStyleBackColor = false;
             // 
             // Registrarse
             // 
             Registrarse.AutoSize = true;
-            Registrarse.Location = new Point(173, 22);
+            Registrarse.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Registrarse.ForeColor = Color.White;
+            Registrarse.Location = new Point(123, 14);
             Registrarse.Name = "Registrarse";
-            Registrarse.Size = new Size(64, 15);
+            Registrarse.Size = new Size(170, 40);
             Registrarse.TabIndex = 0;
             Registrarse.Text = "Registrarse";
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(37, 267);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(79, 19);
-            checkBox1.TabIndex = 8;
-            checkBox1.Text = "Asistencia";
-            checkBox1.UseVisualStyleBackColor = true;
             // 
             // UINewAsistent
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(27, 31, 39);
             ClientSize = new Size(914, 550);
             Controls.Add(panel1);
             Name = "UINewAsistent";
             Text = "UINewAsistent";
+            Load += UINewAsistent_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -158,10 +150,7 @@
         private TextBox TextBoxEmail;
         private TextBox TxtBoxName;
         private LinkLabel linkLabel1;
-        private Button button1;
-        private Label label3;
-        private Label label2;
-        private Label label1;
+        private Button BtnRegistro;
         private Label Registrarse;
     }
 }

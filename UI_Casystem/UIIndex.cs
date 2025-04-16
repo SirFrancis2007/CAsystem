@@ -2,13 +2,13 @@ using System.Runtime.InteropServices;
 
 namespace UI_Casystem
 {
-    public partial class CAsystem : Form
+    public partial class UIIndex : Form
     {
-        public CAsystem()
+        public UIIndex()
         {
             InitializeComponent();
         }
-        
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
             int nLeftRect, int nTopRect,
@@ -24,24 +24,22 @@ namespace UI_Casystem
 
         private void CAsystem_Load(object sender, EventArgs e)
         {
-            BtnRegistro.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BtnRegistro.Width, BtnRegistro.Height, 20, 20));
-            BtnRegistro.FlatStyle = FlatStyle.Flat;
-            BtnRegistro.FlatAppearance.BorderSize = 0;
-            BtnRegistro.BackColor = Color.FromArgb(48, 108, 243);
-            BtnRegistro.ForeColor = Color.White;
-            BtnRegistro.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-
-            btnIngresar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BtnRegistro.Width, BtnRegistro.Height, 20, 20));
-            btnIngresar.FlatStyle = FlatStyle.Flat;
-            btnIngresar.FlatAppearance.BorderSize = 0;
-            btnIngresar.BackColor = Color.FromArgb(48, 108, 243);
-            btnIngresar.ForeColor = Color.White;
-            btnIngresar.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            btnRegistro.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnRegistro.Width, btnRegistro.Height, 15, 15));
+            btnLogin.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnLogin.Width, btnLogin.Height, 15, 15));
+            btnSalir.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnSalir.Width, btnSalir.Height, 7, 7));
+        }
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            Hide();
+            UILogin UILogin = new();
+            UILogin.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnRegistro_Click(object sender, EventArgs e)
         {
-
+            Hide();
+            UIRegistro UIRegistro = new();
+            UIRegistro.Show();
         }
     }
 }

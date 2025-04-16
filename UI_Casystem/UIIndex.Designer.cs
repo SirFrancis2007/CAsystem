@@ -44,7 +44,7 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Tahoma", 15.75F, FontStyle.Bold);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(631, 311);
+            btnLogin.Location = new Point(632, 285);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(217, 56);
             btnLogin.TabIndex = 2;
@@ -59,7 +59,7 @@
             btnRegistro.FlatStyle = FlatStyle.Flat;
             btnRegistro.Font = new Font("Tahoma", 15.75F, FontStyle.Bold);
             btnRegistro.ForeColor = Color.GhostWhite;
-            btnRegistro.Location = new Point(630, 228);
+            btnRegistro.Location = new Point(631, 202);
             btnRegistro.Name = "btnRegistro";
             btnRegistro.Size = new Size(218, 56);
             btnRegistro.TabIndex = 3;
@@ -101,6 +101,7 @@
             btnSalir.TabIndex = 9;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // UIIndex
             // 

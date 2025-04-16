@@ -8,15 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using ControllerEntity;
+using Models;
 
 namespace UI_Casystem
 {
     public partial class UIRegistro : Form
     {
+        ControllerEntity.RegistroController _registroController;
         public UIRegistro()
         {
             InitializeComponent();
+            _registroController = new RegistroController();
         }
+
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
@@ -55,6 +60,30 @@ namespace UI_Casystem
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Hide();
+            UILogin uILogin = new UILogin();
+            uILogin.Show();
+        }
+
+        private void BtnIngresar_Click(object sender, EventArgs e)
+        {
+            string nombre = TxtBoxName.Text;
+            string email = TextBoxEmail.Text;
+            string contraseña = TextBoxPassworld.Text;
+
+            // Create a new instance of the RegistroController
+            try
+            {
+                Usuario nuevoUsuario = _registroController.CreateObjectUser(nombre, email, contraseña);
+            }
+            catch
+            {
+                MessageBox.Show("Error! No se pudo registrar el usuario");
+            }
         }
     }
 }

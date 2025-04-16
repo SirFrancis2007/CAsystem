@@ -63,9 +63,9 @@
             TextBoxPassworld.Location = new Point(33, 263);
             TextBoxPassworld.Multiline = true;
             TextBoxPassworld.Name = "TextBoxPassworld";
+            TextBoxPassworld.PlaceholderText = "Contraseña";
             TextBoxPassworld.Size = new Size(341, 32);
             TextBoxPassworld.TabIndex = 8;
-            TextBoxPassworld.Text = "Contraseña";
             TextBoxPassworld.TextAlign = HorizontalAlignment.Center;
             // 
             // TextBoxEmail
@@ -76,9 +76,10 @@
             TextBoxEmail.Location = new Point(32, 180);
             TextBoxEmail.Multiline = true;
             TextBoxEmail.Name = "TextBoxEmail";
+            TextBoxEmail.PlaceholderText = "Email";
             TextBoxEmail.Size = new Size(347, 35);
             TextBoxEmail.TabIndex = 7;
-            TextBoxEmail.Text = "Email";
+            TextBoxEmail.TextAlign = HorizontalAlignment.Center;
             // 
             // TxtBoxName
             // 
@@ -88,34 +89,37 @@
             TxtBoxName.Location = new Point(32, 91);
             TxtBoxName.Multiline = true;
             TxtBoxName.Name = "TxtBoxName";
+            TxtBoxName.PlaceholderText = "Nombre";
             TxtBoxName.RightToLeft = RightToLeft.No;
             TxtBoxName.Size = new Size(348, 37);
             TxtBoxName.TabIndex = 6;
-            TxtBoxName.Text = "Nombre";
+            TxtBoxName.TextAlign = HorizontalAlignment.Center;
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(93, 379);
+            linkLabel1.Location = new Point(105, 381);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(218, 19);
             linkLabel1.TabIndex = 5;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "¿Ya tienes cuenta, Ingresa?";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // BtnIngresar
             // 
             BtnIngresar.BackColor = Color.FromArgb(46, 55, 78);
             BtnIngresar.FlatStyle = FlatStyle.Popup;
             BtnIngresar.ForeColor = Color.White;
-            BtnIngresar.Location = new Point(32, 312);
+            BtnIngresar.Location = new Point(32, 317);
             BtnIngresar.Name = "BtnIngresar";
             BtnIngresar.Size = new Size(349, 32);
             BtnIngresar.TabIndex = 4;
             BtnIngresar.Text = "Ingresar";
             BtnIngresar.UseVisualStyleBackColor = false;
+            BtnIngresar.Click += BtnIngresar_Click;
             // 
             // Registrarse
             // 

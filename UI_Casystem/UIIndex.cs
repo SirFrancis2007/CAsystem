@@ -41,5 +41,10 @@ namespace UI_Casystem
             UIRegistro UIRegistro = new();
             UIRegistro.Show();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

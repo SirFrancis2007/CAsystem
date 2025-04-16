@@ -60,9 +60,10 @@
             TextBoxPassworld.Location = new Point(32, 226);
             TextBoxPassworld.Multiline = true;
             TextBoxPassworld.Name = "TextBoxPassworld";
+            TextBoxPassworld.PlaceholderText = "Contraseña";
             TextBoxPassworld.Size = new Size(341, 32);
             TextBoxPassworld.TabIndex = 8;
-            TextBoxPassworld.Text = "Contraseña";
+            TextBoxPassworld.TextAlign = HorizontalAlignment.Center;
             // 
             // TextBoxEmail
             // 
@@ -72,9 +73,10 @@
             TextBoxEmail.Location = new Point(32, 125);
             TextBoxEmail.Multiline = true;
             TextBoxEmail.Name = "TextBoxEmail";
+            TextBoxEmail.PlaceholderText = "Email";
             TextBoxEmail.Size = new Size(347, 35);
             TextBoxEmail.TabIndex = 7;
-            TextBoxEmail.Text = "Email";
+            TextBoxEmail.TextAlign = HorizontalAlignment.Center;
             // 
             // linkLabel1
             // 
@@ -87,6 +89,7 @@
             linkLabel1.TabIndex = 5;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "¿No tienes cuenta, Registrate?";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // BtnIngresar
             // 
@@ -99,6 +102,7 @@
             BtnIngresar.TabIndex = 4;
             BtnIngresar.Text = "Ingresar";
             BtnIngresar.UseVisualStyleBackColor = false;
+            BtnIngresar.Click += BtnIngresar_Click;
             // 
             // Registrarse
             // 

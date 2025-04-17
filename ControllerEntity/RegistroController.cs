@@ -13,13 +13,13 @@ namespace ControllerEntity
     {
         public RegistroController() {}
 
-        private void BefInsData(Usuario BefInsUsuario)
+        public void BefInsData(Usuario BefInsUsuario)
         {
             ValidateUser(BefInsUsuario);
             AddNewUser(BefInsUsuario);
         }
 
-        internal bool ValidateUser(Usuario BefInsUsuario)
+        public bool ValidateUser(Usuario BefInsUsuario)
         {
             if (string.IsNullOrEmpty(BefInsUsuario.Nombre) || string.IsNullOrEmpty(BefInsUsuario.Email) || IsPasswordStrong(BefInsUsuario.Contraseña) || string.IsNullOrEmpty(BefInsUsuario.Contraseña))
             {
@@ -28,7 +28,7 @@ namespace ControllerEntity
             return true;
         }
 
-        internal bool IsPasswordStrong(string password)
+        public bool IsPasswordStrong(string password)
         {
             if (password.Length < 8) return false;
             if (!password.Any(char.IsUpper)) return false;
@@ -44,7 +44,7 @@ namespace ControllerEntity
                 {
                     Nombre = xnombre,
                     Email = xemail,
-                    Contraseña = xcontraseña.GetHashCode().ToString()
+                    Contraseña = xcontraseña
                 };
 
                 return NuevoUsuario;
@@ -55,10 +55,18 @@ namespace ControllerEntity
             }
         }
 
-        internal void AddNewUser(Usuario NewUser)
+        public bool AddNewUser(Usuario NewUser)
         {
-            RegistroDataEntity registroDataEntity = new RegistroDataEntity();
-            registroDataEntity.MthAddNewUser(NewUser);
+            try
+            {
+                RegistroDataEntity registroDataEntity = new RegistroDataEntity();
+                registroDataEntity.MthAddNewUser(NewUser);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

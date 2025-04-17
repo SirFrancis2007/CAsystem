@@ -67,8 +67,18 @@ namespace UI_Casystem
 
             try
             {
-                // Use the instance of LoginController to call PassCredencial  
                 bool IngresoUsuario = _loginController.PassCredencial(email, password);
+                if (IngresoUsuario)
+                {
+                    MessageBox.Show("Ingreso exitoso");
+                    Hide();
+                    UIListado InterfazListado = new UIListado();
+                    InterfazListado.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Error! No se pudo Ingresar");
+                }
             }
             catch (Exception ex)
             {

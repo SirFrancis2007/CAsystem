@@ -75,15 +75,31 @@ namespace UI_Casystem
             string email = TextBoxEmail.Text;
             string contraseña = TextBoxPassworld.Text;
 
-            // Create a new instance of the RegistroController
             try
             {
                 Usuario nuevoUsuario = _registroController.CreateObjectUser(nombre, email, contraseña);
+
+                if (!_registroController.ValidateUser(nuevoUsuario))
+                {
+                    MessageBox.Show("Los datos no son válidos. Verificá los campos.");
+                    return;
+                }
+
+                bool insertado = _registroController.AddNewUser(nuevoUsuario);
+
+                if (insertado)
+                {
+                    UIListado InterfazListado = new UIListado();
+                    InterfazListado.Show();
+                }
+                else
+                    MessageBox.Show("No se pudo registrar el usuario.");
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Error! No se pudo registrar el usuario");
+                MessageBox.Show("Error inesperado: " + ex.Message);
             }
         }
+
     }
 }

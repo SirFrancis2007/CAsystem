@@ -20,12 +20,12 @@ namespace DataEntity
 
             using (SQLiteConnection conexion = ConexionBD.ObtenerConexion())
             {
-                string query = "SELECT Email, contrasena FROM Usuario WHERE Email = @Email AND contrasena = @Contraseña;";
+                string query = "SELECT Email, contrasena FROM Usuario WHERE Email = @xEmail AND contrasena = @xContraseña;";
 
                 using (SQLiteCommand comando = new SQLiteCommand(query, conexion))
                 {
-                    comando.Parameters.AddWithValue("@Email", email);
-                    comando.Parameters.AddWithValue("@Contraseña", contraseña);
+                    comando.Parameters.AddWithValue("@xEmail", email);
+                    comando.Parameters.AddWithValue("@xContraseña", contraseña);
 
                     using (SQLiteDataReader lector = comando.ExecuteReader())
                     {

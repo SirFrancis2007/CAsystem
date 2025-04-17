@@ -5,7 +5,7 @@ namespace DataEntity
 {
     public class ConexionBD
     {
-        private static string cadenaConexion = "Data Source=BDC.db;Version=3;";
+        private static string cadenaConexion = "Data Source=./basededatos.db3 ;Version=3;";
 
         public static SQLiteConnection ObtenerConexion()
         {

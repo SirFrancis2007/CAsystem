@@ -74,6 +74,7 @@ namespace UI_Casystem
                 {
                     UIListado InterfazListado = new UIListado();
                     InterfazListado.Show();
+                    Close();
                 }
                 else
                     MessageBox.Show("No se pudo registrar el usuario.");

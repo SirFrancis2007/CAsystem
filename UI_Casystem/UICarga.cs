@@ -19,15 +19,17 @@ namespace UI_Casystem
 
         private void UICarga_Load(object sender, EventArgs e)
         {
+            CenterToScreen();
             TimePorcentajeCarga.Start();
+            FormBorderStyle = FormBorderStyle.FixedDialog;
 
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (progressBar1.Value < 100)
+            if (progressBar1.Value < 99)
             {
-                progressBar1.Value += 1;
+                progressBar1.Value += 3;
 
                 label1.Text = progressBar1.Value.ToString() + "%";
             }
@@ -35,8 +37,19 @@ namespace UI_Casystem
             else
             {
                 TimePorcentajeCarga.Stop();
-                this.Hide();
+                Hide();
+
+                UIIndex uIIndex = new();
+                uIIndex.Show();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TimePorcentajeCarga.Stop();
+            Hide();
+            UIIndex uIIndex = new();
+            uIIndex.Show();
         }
 
         //hacer un mth asincronico que haga la conexion con la bd. 

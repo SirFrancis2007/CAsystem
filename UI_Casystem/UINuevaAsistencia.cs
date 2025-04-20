@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace UI_Casystem
 {
-    public partial class UINewAsistent : Form
+    public partial class UINuevaAsistencia : Form
     {
-        public UINewAsistent()
+        public UINuevaAsistencia()
         {
             InitializeComponent();
         }
@@ -27,13 +27,24 @@ namespace UI_Casystem
 
         private void UINewAsistent_Load(object sender, EventArgs e)
         {
-            //BtnRegistro
-            BtnRegistro.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BtnRegistro.Width, BtnRegistro.Height, 20, 20));
-            BtnRegistro.FlatStyle = FlatStyle.Flat;
-            BtnRegistro.FlatAppearance.BorderSize = 0;
-            BtnRegistro.BackColor = Color.FromArgb(46, 55, 78);
-            BtnRegistro.ForeColor = Color.White;
-            BtnRegistro.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            FormBorderStyle = FormBorderStyle.FixedDialog; 
+            CenterToParent();
+            btnAgregarAsistencia.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnAgregarAsistencia.Width, btnAgregarAsistencia.Height, 20, 20));
+        }
+
+        private void iconVolver_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void linkListado_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Close();
+        }
+
+        private void btnAgregarAsistencia_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

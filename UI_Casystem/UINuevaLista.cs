@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace UI_Casystem
 {
-    public partial class UINewList : Form
+    public partial class UINuevaLista : Form
     {
-        public UINewList()
+        public UINuevaLista()
         {
             InitializeComponent();
         }
@@ -27,17 +27,25 @@ namespace UI_Casystem
 
         private void UINewList_Load(object sender, EventArgs e)
         {
+            FormBorderStyle = FormBorderStyle.FixedDialog; 
+            CenterToParent();
             btnNuevoListado.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnNuevoListado.Width, btnNuevoListado.Height, 20, 20));
-            btnNuevoListado.FlatStyle = FlatStyle.Flat;
-            btnNuevoListado.FlatAppearance.BorderSize = 0;
-            btnNuevoListado.BackColor = Color.FromArgb(46, 55, 78);
-            btnNuevoListado.ForeColor = Color.White;
-            btnNuevoListado.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            inputNombre.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, inputNombre.Width, inputNombre.Height, 7, 7));
+        }
 
-            TxtBoxName.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, TxtBoxName.Width, TxtBoxName.Height, 20, 20));
-            TxtBoxName.BackColor = Color.FromArgb(29, 31, 33);
-            TxtBoxName.ForeColor = Color.White;
-            TxtBoxName.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+        private void linkListado_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Close();
+        }
+
+        private void iconCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnNuevoListado_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

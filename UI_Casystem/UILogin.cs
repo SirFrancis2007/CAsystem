@@ -15,12 +15,12 @@ namespace UI_Casystem
 {
     public partial class UILogin : Form
     {
-        private LoginController _loginController; 
+        private LoginController _loginController;
 
         public UILogin()
         {
             InitializeComponent();
-            _loginController = new LoginController(); 
+            _loginController = new LoginController();
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -32,25 +32,19 @@ namespace UI_Casystem
 
         private void UILogin_Load(object sender, EventArgs e)
         {
+            FormBorderStyle = FormBorderStyle.FixedDialog; 
+            CenterToScreen();
+
             //BtnIngresar  
-            BtnIngresar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BtnIngresar.Width, BtnIngresar.Height, 20, 20));
-            BtnIngresar.FlatStyle = FlatStyle.Flat;
-            BtnIngresar.FlatAppearance.BorderSize = 0;
-            BtnIngresar.BackColor = Color.FromArgb(46, 55, 78);
-            BtnIngresar.ForeColor = Color.White;
-            BtnIngresar.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            btnIngresar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnIngresar.Width, btnIngresar.Height, 20, 20));
+            btnIngresar.FlatStyle = FlatStyle.Flat;
+            btnIngresar.FlatAppearance.BorderSize = 0;
 
             //TextBoxPassworld  
-            TextBoxPassworld.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, TextBoxPassworld.Width, TextBoxPassworld.Height, 20, 20));
-            TextBoxPassworld.BackColor = Color.FromArgb(29, 31, 33);
-            TextBoxPassworld.ForeColor = Color.White;
-            TextBoxPassworld.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            inputPassword.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, inputPassword.Width, inputPassword.Height, 7, 7));
 
             //TextBoxEmail  
-            TextBoxEmail.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, TextBoxEmail.Width, TextBoxEmail.Height, 20, 20));
-            TextBoxEmail.BackColor = Color.FromArgb(29, 31, 33);
-            TextBoxEmail.ForeColor = Color.White;
-            TextBoxEmail.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            inputEmail.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, inputEmail.Width, inputEmail.Height, 7, 7));
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -62,17 +56,16 @@ namespace UI_Casystem
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
-            string email = TextBoxEmail.Text;
-            string password = TextBoxPassworld.Text;
+            string email = inputEmail.Text;
+            string password = inputPassword.Text;
 
             try
             {
                 bool IngresoUsuario = _loginController.PassCredencial(email, password);
                 if (IngresoUsuario)
                 {
-                    MessageBox.Show("Ingreso exitoso");
                     Hide();
-                    UIListado InterfazListado = new UIListado();
+                    UIListado InterfazListado = new();
                     InterfazListado.Show();
                 }
                 else
@@ -84,6 +77,11 @@ namespace UI_Casystem
             {
                 MessageBox.Show($"Error! No se pudo Ingresar: {ex.Message}");
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

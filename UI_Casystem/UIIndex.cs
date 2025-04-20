@@ -24,6 +24,9 @@ namespace UI_Casystem
 
         private void CAsystem_Load(object sender, EventArgs e)
         {
+            CenterToScreen();
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+
             btnRegistro.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnRegistro.Width, btnRegistro.Height, 15, 15));
             btnLogin.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnLogin.Width, btnLogin.Height, 15, 15));
             btnSalir.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnSalir.Width, btnSalir.Height, 7, 7));
@@ -44,7 +47,7 @@ namespace UI_Casystem
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

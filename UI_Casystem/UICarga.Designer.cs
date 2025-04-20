@@ -29,32 +29,20 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Title = new Label();
             label1 = new Label();
             progressBar1 = new ProgressBar();
             PorcentajeCarga = new Label();
             TimePorcentajeCarga = new System.Windows.Forms.Timer(components);
+            pictureBox1 = new PictureBox();
+            button1 = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // Title
-            // 
-            Title.AutoSize = true;
-            Title.BackColor = Color.Transparent;
-            Title.FlatStyle = FlatStyle.Popup;
-            Title.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Title.ForeColor = Color.White;
-            Title.Location = new Point(371, 145);
-            Title.Name = "Title";
-            Title.Size = new Size(191, 50);
-            Title.TabIndex = 1;
-            Title.Text = "CAsystem";
-            Title.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.White;
-            label1.Location = new Point(411, 306);
+            label1.Location = new Point(336, 325);
             label1.Name = "label1";
             label1.Size = new Size(115, 15);
             label1.TabIndex = 2;
@@ -63,25 +51,44 @@
             // progressBar1
             // 
             progressBar1.ForeColor = Color.FromArgb(27, 31, 39);
-            progressBar1.Location = new Point(0, 542);
+            progressBar1.Location = new Point(89, 360);
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(955, 18);
+            progressBar1.Size = new Size(517, 18);
             progressBar1.TabIndex = 3;
             // 
             // PorcentajeCarga
             // 
             PorcentajeCarga.AutoSize = true;
-            PorcentajeCarga.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PorcentajeCarga.Font = new Font("Tahoma", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             PorcentajeCarga.ForeColor = Color.White;
-            PorcentajeCarga.Location = new Point(423, 236);
+            PorcentajeCarga.Location = new Point(295, 419);
             PorcentajeCarga.Name = "PorcentajeCarga";
-            PorcentajeCarga.Size = new Size(83, 32);
+            PorcentajeCarga.Size = new Size(145, 29);
             PorcentajeCarga.TabIndex = 4;
-            PorcentajeCarga.Text = "label2";
+            PorcentajeCarga.Text = "Bienvenido";
             // 
             // TimePorcentajeCarga
             // 
             TimePorcentajeCarga.Tick += timer1_Tick;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources._1;
+            pictureBox1.Location = new Point(89, -55);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(517, 350);
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(12, 450);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 6;
+            button1.Text = "skipear";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // UICarga
             // 
@@ -89,26 +96,28 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.FromArgb(27, 31, 39);
-            ClientSize = new Size(954, 561);
+            ClientSize = new Size(718, 485);
             ControlBox = false;
+            Controls.Add(button1);
+            Controls.Add(pictureBox1);
             Controls.Add(PorcentajeCarga);
             Controls.Add(progressBar1);
             Controls.Add(label1);
-            Controls.Add(Title);
             Name = "UICarga";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UICarga";
             Load += UICarga_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label Title;
         private Label label1;
         private ProgressBar progressBar1;
         private Label PorcentajeCarga;
         private System.Windows.Forms.Timer TimePorcentajeCarga;
+        private PictureBox pictureBox1;
+        private Button button1;
     }
 }

@@ -29,108 +29,128 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            TextBoxPassworld = new TextBox();
-            TextBoxEmail = new TextBox();
-            TxtBoxName = new TextBox();
-            linkLabel1 = new LinkLabel();
-            BtnIngresar = new Button();
-            Registrarse = new Label();
+            inputPassword = new TextBox();
+            inputEmail = new TextBox();
+            inputNombre = new TextBox();
+            linkLogin = new LinkLabel();
+            btnIngresar = new Button();
+            labelRegistrarse = new Label();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(27, 31, 39);
-            panel1.Controls.Add(TextBoxPassworld);
-            panel1.Controls.Add(TextBoxEmail);
-            panel1.Controls.Add(TxtBoxName);
-            panel1.Controls.Add(linkLabel1);
-            panel1.Controls.Add(BtnIngresar);
-            panel1.Controls.Add(Registrarse);
+            panel1.BackColor = Color.FromArgb(24, 28, 35);
+            panel1.Controls.Add(inputPassword);
+            panel1.Controls.Add(inputEmail);
+            panel1.Controls.Add(inputNombre);
+            panel1.Controls.Add(linkLogin);
+            panel1.Controls.Add(btnIngresar);
+            panel1.Controls.Add(labelRegistrarse);
             panel1.Font = new Font("Arial", 12F, FontStyle.Bold);
             panel1.ForeColor = Color.White;
-            panel1.Location = new Point(250, 67);
+            panel1.Location = new Point(488, 68);
             panel1.Name = "panel1";
             panel1.Size = new Size(414, 417);
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
             // 
-            // TextBoxPassworld
+            // inputPassword
             // 
-            TextBoxPassworld.BackColor = Color.FromArgb(29, 31, 33);
-            TextBoxPassworld.BorderStyle = BorderStyle.None;
-            TextBoxPassworld.ForeColor = Color.White;
-            TextBoxPassworld.Location = new Point(33, 263);
-            TextBoxPassworld.Multiline = true;
-            TextBoxPassworld.Name = "TextBoxPassworld";
-            TextBoxPassworld.PlaceholderText = "Contraseña";
-            TextBoxPassworld.Size = new Size(341, 32);
-            TextBoxPassworld.TabIndex = 8;
-            TextBoxPassworld.TextAlign = HorizontalAlignment.Center;
+            inputPassword.BackColor = Color.FromArgb(64, 64, 64);
+            inputPassword.BorderStyle = BorderStyle.None;
+            inputPassword.Font = new Font("Tahoma", 14.25F);
+            inputPassword.ForeColor = Color.White;
+            inputPassword.Location = new Point(32, 245);
+            inputPassword.Multiline = true;
+            inputPassword.Name = "inputPassword";
+            inputPassword.PlaceholderText = "Contraseña";
+            inputPassword.Size = new Size(347, 26);
+            inputPassword.TabIndex = 8;
+            inputPassword.TextAlign = HorizontalAlignment.Center;
             // 
-            // TextBoxEmail
+            // inputEmail
             // 
-            TextBoxEmail.BackColor = Color.FromArgb(29, 31, 33);
-            TextBoxEmail.BorderStyle = BorderStyle.None;
-            TextBoxEmail.ForeColor = Color.White;
-            TextBoxEmail.Location = new Point(32, 180);
-            TextBoxEmail.Multiline = true;
-            TextBoxEmail.Name = "TextBoxEmail";
-            TextBoxEmail.PlaceholderText = "Email";
-            TextBoxEmail.Size = new Size(347, 35);
-            TextBoxEmail.TabIndex = 7;
-            TextBoxEmail.TextAlign = HorizontalAlignment.Center;
+            inputEmail.BackColor = Color.FromArgb(64, 64, 64);
+            inputEmail.BorderStyle = BorderStyle.None;
+            inputEmail.Font = new Font("Tahoma", 14.25F);
+            inputEmail.ForeColor = Color.White;
+            inputEmail.Location = new Point(32, 188);
+            inputEmail.Multiline = true;
+            inputEmail.Name = "inputEmail";
+            inputEmail.PlaceholderText = "Email";
+            inputEmail.Size = new Size(347, 26);
+            inputEmail.TabIndex = 7;
+            inputEmail.TextAlign = HorizontalAlignment.Center;
             // 
-            // TxtBoxName
+            // inputNombre
             // 
-            TxtBoxName.BackColor = Color.FromArgb(29, 31, 33);
-            TxtBoxName.BorderStyle = BorderStyle.None;
-            TxtBoxName.ForeColor = Color.White;
-            TxtBoxName.Location = new Point(32, 91);
-            TxtBoxName.Multiline = true;
-            TxtBoxName.Name = "TxtBoxName";
-            TxtBoxName.PlaceholderText = "Nombre";
-            TxtBoxName.RightToLeft = RightToLeft.No;
-            TxtBoxName.Size = new Size(348, 37);
-            TxtBoxName.TabIndex = 6;
-            TxtBoxName.TextAlign = HorizontalAlignment.Center;
+            inputNombre.BackColor = Color.FromArgb(64, 64, 64);
+            inputNombre.BorderStyle = BorderStyle.None;
+            inputNombre.Font = new Font("Tahoma", 14.25F);
+            inputNombre.ForeColor = Color.White;
+            inputNombre.Location = new Point(32, 131);
+            inputNombre.Multiline = true;
+            inputNombre.Name = "inputNombre";
+            inputNombre.PlaceholderText = "Nombre";
+            inputNombre.RightToLeft = RightToLeft.No;
+            inputNombre.Size = new Size(347, 26);
+            inputNombre.TabIndex = 6;
+            inputNombre.TextAlign = HorizontalAlignment.Center;
             // 
-            // linkLabel1
+            // linkLogin
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
-            linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(105, 381);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(218, 19);
-            linkLabel1.TabIndex = 5;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "¿Ya tienes cuenta, Ingresa?";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            linkLogin.ActiveLinkColor = Color.DodgerBlue;
+            linkLogin.AutoSize = true;
+            linkLogin.Cursor = Cursors.Hand;
+            linkLogin.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            linkLogin.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkLogin.LinkColor = Color.White;
+            linkLogin.Location = new Point(106, 372);
+            linkLogin.Name = "linkLogin";
+            linkLogin.Size = new Size(230, 19);
+            linkLogin.TabIndex = 5;
+            linkLogin.TabStop = true;
+            linkLogin.Text = "¿Ya tienes cuenta? Ingresa";
+            linkLogin.VisitedLinkColor = Color.White;
+            linkLogin.LinkClicked += linkLabel1_LinkClicked;
             // 
-            // BtnIngresar
+            // btnIngresar
             // 
-            BtnIngresar.BackColor = Color.FromArgb(46, 55, 78);
-            BtnIngresar.FlatStyle = FlatStyle.Popup;
-            BtnIngresar.ForeColor = Color.White;
-            BtnIngresar.Location = new Point(32, 317);
-            BtnIngresar.Name = "BtnIngresar";
-            BtnIngresar.Size = new Size(349, 32);
-            BtnIngresar.TabIndex = 4;
-            BtnIngresar.Text = "Ingresar";
-            BtnIngresar.UseVisualStyleBackColor = false;
-            BtnIngresar.Click += BtnIngresar_Click;
+            btnIngresar.BackColor = Color.FromArgb(48, 108, 243);
+            btnIngresar.Cursor = Cursors.Hand;
+            btnIngresar.FlatStyle = FlatStyle.Flat;
+            btnIngresar.Font = new Font("Tahoma", 15.75F, FontStyle.Bold);
+            btnIngresar.ForeColor = Color.White;
+            btnIngresar.Location = new Point(32, 317);
+            btnIngresar.Name = "btnIngresar";
+            btnIngresar.Size = new Size(347, 41);
+            btnIngresar.TabIndex = 4;
+            btnIngresar.Text = "Ingresar";
+            btnIngresar.UseVisualStyleBackColor = false;
+            btnIngresar.Click += BtnIngresar_Click;
             // 
-            // Registrarse
+            // labelRegistrarse
             // 
-            Registrarse.AutoSize = true;
-            Registrarse.Font = new Font("Arial Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Registrarse.ForeColor = Color.White;
-            Registrarse.Location = new Point(148, 14);
-            Registrarse.Name = "Registrarse";
-            Registrarse.Size = new Size(127, 33);
-            Registrarse.TabIndex = 0;
-            Registrarse.Text = "Registro";
+            labelRegistrarse.AutoSize = true;
+            labelRegistrarse.Font = new Font("Tahoma", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRegistrarse.ForeColor = Color.White;
+            labelRegistrarse.Location = new Point(150, 53);
+            labelRegistrarse.Name = "labelRegistrarse";
+            labelRegistrarse.Size = new Size(130, 33);
+            labelRegistrarse.TabIndex = 0;
+            labelRegistrarse.Text = "Registro";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources._1;
+            pictureBox1.Location = new Point(1, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(463, 327);
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
             // UIRegistro
             // 
@@ -138,6 +158,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(27, 31, 39);
             ClientSize = new Size(914, 550);
+            Controls.Add(pictureBox1);
             Controls.Add(panel1);
             MaximizeBox = false;
             Name = "UIRegistro";
@@ -145,17 +166,19 @@
             Load += UIRegistro_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private TextBox TextBoxPassworld;
-        private TextBox TextBoxEmail;
-        private TextBox TxtBoxName;
-        private LinkLabel linkLabel1;
-        private Button BtnIngresar;
-        private Label Registrarse;
+        private TextBox inputPassword;
+        private TextBox inputEmail;
+        private TextBox inputNombre;
+        private LinkLabel linkLogin;
+        private Button btnIngresar;
+        private Label labelRegistrarse;
+        private PictureBox pictureBox1;
     }
 }

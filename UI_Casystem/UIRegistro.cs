@@ -32,29 +32,12 @@ namespace UI_Casystem
 
         private void UIRegistro_Load(object sender, EventArgs e)
         {
-            BtnIngresar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BtnIngresar.Width, BtnIngresar.Height, 20, 20));
-            BtnIngresar.FlatStyle = FlatStyle.Flat;
-            BtnIngresar.FlatAppearance.BorderSize = 0;
-            BtnIngresar.BackColor = Color.FromArgb(46, 55, 78);
-            BtnIngresar.ForeColor = Color.White;
-            BtnIngresar.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-
-            TxtBoxName.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, TxtBoxName.Width, TxtBoxName.Height, 20, 20));
-            TxtBoxName.BackColor = Color.FromArgb(29, 31, 33);
-            TxtBoxName.ForeColor = Color.White;
-            TxtBoxName.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-
-            //TextBoxEmail
-            TextBoxEmail.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, TextBoxEmail.Width, TextBoxEmail.Height, 20, 20));
-            TextBoxEmail.BackColor = Color.FromArgb(29, 31, 33);
-            TextBoxEmail.ForeColor = Color.White;
-            TextBoxEmail.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-
-            //TextBoxPassworld
-            TextBoxPassworld.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, TextBoxPassworld.Width, TextBoxPassworld.Height, 20, 20));
-            TextBoxPassworld.BackColor = Color.FromArgb(29, 31, 33);
-            TextBoxPassworld.ForeColor = Color.White;
-            TextBoxPassworld.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            FormBorderStyle = FormBorderStyle.FixedDialog; 
+            CenterToParent();
+            btnIngresar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnIngresar.Width, btnIngresar.Height, 20, 20));
+            inputNombre.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, inputNombre.Width, inputNombre.Height, 20, 20));
+            inputEmail.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, inputEmail.Width, inputEmail.Height, 20, 20));
+            inputPassword.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, inputPassword.Width, inputPassword.Height, 20, 20));
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -71,9 +54,9 @@ namespace UI_Casystem
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
-            string nombre = TxtBoxName.Text;
-            string email = TextBoxEmail.Text;
-            string contraseña = TextBoxPassworld.Text;
+            string nombre = inputNombre.Text;
+            string email = inputEmail.Text;
+            string contraseña = inputPassword.Text;
 
             try
             {

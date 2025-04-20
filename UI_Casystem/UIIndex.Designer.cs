@@ -40,6 +40,7 @@
             // btnLogin
             // 
             btnLogin.BackColor = Color.FromArgb(48, 108, 243);
+            btnLogin.Cursor = Cursors.Hand;
             btnLogin.FlatAppearance.BorderSize = 0;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Tahoma", 15.75F, FontStyle.Bold);
@@ -55,6 +56,7 @@
             // btnRegistro
             // 
             btnRegistro.BackColor = Color.FromArgb(48, 108, 243);
+            btnRegistro.Cursor = Cursors.Hand;
             btnRegistro.FlatAppearance.BorderSize = 0;
             btnRegistro.FlatStyle = FlatStyle.Flat;
             btnRegistro.Font = new Font("Tahoma", 15.75F, FontStyle.Bold);
@@ -85,12 +87,14 @@
             pictureBox1.Location = new Point(63, 23);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(474, 362);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
             // btnSalir
             // 
             btnSalir.BackColor = Color.FromArgb(48, 108, 243);
+            btnSalir.Cursor = Cursors.Hand;
             btnSalir.FlatAppearance.BorderSize = 0;
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Tahoma", 12F, FontStyle.Bold);

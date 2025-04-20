@@ -41,9 +41,7 @@ namespace ControllerEntity
                 if (!BefVefCredencial(email, password))
                     throw new ArgumentException("Datos no aceptados");
                 LoginDataEntity _IngresoDataEntity = new LoginDataEntity();
-                _IngresoDataEntity.VefCredenciales(email, password);
-
-                return true;
+                return _IngresoDataEntity.VefCredenciales(email, password);
             }
             catch
             {

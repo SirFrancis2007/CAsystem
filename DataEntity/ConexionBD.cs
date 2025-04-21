@@ -1,24 +1,34 @@
 ﻿using System;
 using System.Data.SQLite;
+using System.Configuration;
 
 namespace DataEntity
 {
-    public class ConexionBD
-    {
-        private static string cadenaConexion = "Data Source=./basededatos.db3 ;Version=3;";
+    using System;
+    using System.Data.SQLite;
 
-        public static SQLiteConnection ObtenerConexion()
+    namespace DataEntity
+    {
+        public class ConexionBD
         {
-            try
+            // Cadena de conexión a la base de datos SQLite  
+            // Busca en App.config la cadena de conexión.
+            private static string cadenaConexion = "Data Source=CasystemBD.db;Version=3;";
+
+            public static SQLiteConnection ObtenerConexion()
             {
-                SQLiteConnection conexion = new SQLiteConnection(cadenaConexion);
-                conexion.Open();
-                return conexion;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al conectar con la base de datos: " + ex.Message);
+                try
+                {
+                    SQLiteConnection conexion = new SQLiteConnection(cadenaConexion);
+                    conexion.Open();
+                    return conexion;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al conectar con la base de datos: " + ex.Message);
+                }
             }
         }
     }
+
 }

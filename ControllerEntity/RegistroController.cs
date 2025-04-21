@@ -60,8 +60,7 @@ namespace ControllerEntity
             try
             {
                 RegistroDataEntity registroDataEntity = new RegistroDataEntity();
-                registroDataEntity.MthAddNewUser(NewUser);
-                return true;
+                return registroDataEntity.MthAddNewUser(NewUser); ;
             }
             catch
             {

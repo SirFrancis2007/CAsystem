@@ -24,8 +24,9 @@ namespace UI_Casystem
 
         private void UIListadoAsistencia_Load(object sender, EventArgs e)
         {
-            FormBorderStyle = FormBorderStyle.FixedDialog; 
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             CenterToParent();
+            labelFecha.Text = $"Hoy es: {DateTime.Now:dd/MM/yyyy}";
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -51,6 +52,13 @@ namespace UI_Casystem
         {
             UIIndex uIIndex = new();
             uIIndex.Show();
+            Close();
+        }
+
+        private void linkListado_Click(object sender, EventArgs e)
+        {
+            UIListado uIListado = new();
+            uIListado.Show();
             Close();
         }
     }

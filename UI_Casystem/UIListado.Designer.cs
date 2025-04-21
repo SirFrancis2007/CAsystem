@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UIListado));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panelAside = new Panel();
+            button1 = new Button();
             iconCerrarSesion = new PictureBox();
             linkLogout = new LinkLabel();
             pictureBox1 = new PictureBox();
@@ -42,7 +43,7 @@
             label4 = new Label();
             iconNuevaLista = new PictureBox();
             linkNuevaLista = new LinkLabel();
-            button1 = new Button();
+            label1 = new Label();
             panelAside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconCerrarSesion).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -64,6 +65,16 @@
             panelAside.Name = "panelAside";
             panelAside.Size = new Size(204, 554);
             panelAside.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(35, 262);
+            button1.Name = "button1";
+            button1.Size = new Size(132, 33);
+            button1.TabIndex = 12;
+            button1.Text = "listadoAsistencia";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // iconCerrarSesion
             // 
@@ -214,15 +225,16 @@
             linkNuevaLista.TextAlign = ContentAlignment.MiddleCenter;
             linkNuevaLista.LinkClicked += linkLabel2_LinkClicked;
             // 
-            // button1
+            // label1
             // 
-            button1.Location = new Point(35, 262);
-            button1.Name = "button1";
-            button1.Size = new Size(132, 33);
-            button1.TabIndex = 12;
-            button1.Text = "listadoAsistencia";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(227, 75);
+            label1.Name = "label1";
+            label1.Size = new Size(162, 19);
+            label1.TabIndex = 14;
+            label1.Text = "nombre email pass";
             // 
             // UIListado
             // 
@@ -230,6 +242,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(19, 22, 28);
             ClientSize = new Size(914, 550);
+            Controls.Add(label1);
             Controls.Add(iconNuevaLista);
             Controls.Add(label4);
             Controls.Add(linkNuevaLista);
@@ -264,5 +277,6 @@
         private PictureBox iconNuevaLista;
         private LinkLabel linkNuevaLista;
         private Button button1;
+        private Label label1;
     }
 }

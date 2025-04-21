@@ -64,6 +64,7 @@
             inputPassword.Location = new Point(34, 182);
             inputPassword.Multiline = true;
             inputPassword.Name = "inputPassword";
+            inputPassword.PasswordChar = '•';
             inputPassword.PlaceholderText = "Contraseña";
             inputPassword.Size = new Size(347, 26);
             inputPassword.TabIndex = 8;

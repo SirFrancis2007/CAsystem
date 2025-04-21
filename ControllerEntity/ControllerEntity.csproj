@@ -16,4 +16,10 @@
     <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="UI_Casystem">
+      <HintPath>..\UI_Casystem\bin\Debug\net8.0-windows\UI_Casystem.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

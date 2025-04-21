@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControllerEntity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace UI_Casystem
 {
     public partial class UIListado : Form
     {
+        RegistroController RC = new();
+
         public UIListado()
         {
             InitializeComponent();
@@ -23,6 +26,8 @@ namespace UI_Casystem
             FormBorderStyle = FormBorderStyle.FixedDialog;
 
             labelFecha.Text = $"Hoy es: {DateTime.Now:dd/MM/yyyy}";
+            labelSaludo.Text = $"Hola, {RC.CurrentUser.Nombre}";
+            label1.Text = $"{RC.CurrentUser.Nombre}, {RC.CurrentUser.Email}, {RC.CurrentUser.Contraseña}";
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

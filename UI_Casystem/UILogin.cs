@@ -1,15 +1,5 @@
 ﻿using ControllerEntity;
-using Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace UI_Casystem
 {
@@ -50,7 +40,7 @@ namespace UI_Casystem
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Hide();
-            UIRegistro uIRegistro = new UIRegistro();
+            UIRegistro uIRegistro = new();
             uIRegistro.Show();
         }
 

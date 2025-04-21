@@ -15,11 +15,11 @@ namespace UI_Casystem
 {
     public partial class UIRegistro : Form
     {
-        ControllerEntity.RegistroController _registroController;
+        ControllerEntity.RegistroController _RC;
         public UIRegistro()
         {
             InitializeComponent();
-            _registroController = new RegistroController();
+            _RC = new RegistroController();
         }
 
 
@@ -40,11 +40,6 @@ namespace UI_Casystem
             inputPassword.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, inputPassword.Width, inputPassword.Height, 20, 20));
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Hide();
@@ -60,15 +55,15 @@ namespace UI_Casystem
 
             try
             {
-                Usuario nuevoUsuario = _registroController.CreateObjectUser(nombre, email, contraseña);
+                _RC.CreateObjectUser(nombre, email, contraseña);
 
-                if (!_registroController.ValidateUser(nuevoUsuario))
+                if (!_RC.ValidateUserInput(_RC.CurrentUser))
                 {
                     MessageBox.Show("Los datos no son válidos. Verificá los campos.");
                     return;
                 }
 
-                bool insertado = _registroController.AddNewUser(nuevoUsuario);
+                bool insertado = _RC.AddNewUser(_RC.CurrentUser);
 
                 if (insertado)
                 {

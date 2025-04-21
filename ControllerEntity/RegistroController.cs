@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,15 +12,15 @@ namespace ControllerEntity
 {
     public class RegistroController
     {
-        public RegistroController() {}
+        public Usuario CurrentUser = new();
 
         public void BefInsData(Usuario BefInsUsuario)
         {
-            ValidateUser(BefInsUsuario);
+            ValidateUserInput(BefInsUsuario);
             AddNewUser(BefInsUsuario);
         }
 
-        public bool ValidateUser(Usuario BefInsUsuario)
+        public bool ValidateUserInput(Usuario BefInsUsuario)
         {
             if (string.IsNullOrEmpty(BefInsUsuario.Nombre) || string.IsNullOrEmpty(BefInsUsuario.Email) || IsPasswordStrong(BefInsUsuario.Contraseña) || string.IsNullOrEmpty(BefInsUsuario.Contraseña))
             {
@@ -36,31 +37,19 @@ namespace ControllerEntity
             return true;
         }
 
-        public Usuario CreateObjectUser(string xnombre, string xemail, string xcontraseña)
+        public void CreateObjectUser(string xnombre, string xemail, string xcontraseña)
         {
-            try
-            {
-                Usuario NuevoUsuario = new Usuario
-                {
-                    Nombre = xnombre,
-                    Email = xemail,
-                    Contraseña = xcontraseña
-                };
-
-                return NuevoUsuario;
-            }
-            catch
-            {
-                return null;
-            }
+                CurrentUser.Nombre = xnombre;
+                CurrentUser.Email = xemail;
+                CurrentUser.Contraseña = xcontraseña;
         }
 
         public bool AddNewUser(Usuario NewUser)
         {
             try
             {
-                RegistroDataEntity registroDataEntity = new RegistroDataEntity();
-                return registroDataEntity.MthAddNewUser(NewUser); ;
+                RegistroDataEntity registroDataEntity = new();
+                return registroDataEntity.MthAddNewUser(NewUser);
             }
             catch
             {

@@ -55,7 +55,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(414, 417);
             panel1.TabIndex = 2;
-            panel1.Paint += panel1_Paint;
             // 
             // inputPassword
             // 
@@ -66,6 +65,7 @@
             inputPassword.Location = new Point(32, 245);
             inputPassword.Multiline = true;
             inputPassword.Name = "inputPassword";
+            inputPassword.PasswordChar = '•';
             inputPassword.PlaceholderText = "Contraseña";
             inputPassword.Size = new Size(347, 26);
             inputPassword.TabIndex = 8;

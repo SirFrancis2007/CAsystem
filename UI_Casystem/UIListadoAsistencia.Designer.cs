@@ -40,11 +40,14 @@
             linkLabel3 = new LinkLabel();
             pictureBox2 = new PictureBox();
             labelFecha = new Label();
+            iconVolver = new PictureBox();
+            linkListado = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelAside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconVolver).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -100,7 +103,9 @@
             // panelAside
             // 
             panelAside.BackColor = Color.FromArgb(27, 31, 39);
+            panelAside.Controls.Add(iconVolver);
             panelAside.Controls.Add(pictureBox3);
+            panelAside.Controls.Add(linkListado);
             panelAside.Controls.Add(linkLogout);
             panelAside.Controls.Add(pictureBox1);
             panelAside.Controls.Add(label3);
@@ -186,6 +191,35 @@
             labelFecha.TabIndex = 9;
             labelFecha.Text = "Hoy es: {dia}";
             // 
+            // iconVolver
+            // 
+            iconVolver.Cursor = Cursors.Hand;
+            iconVolver.Image = (Image)resources.GetObject("iconVolver.Image");
+            iconVolver.Location = new Point(17, 260);
+            iconVolver.Name = "iconVolver";
+            iconVolver.Size = new Size(25, 25);
+            iconVolver.SizeMode = PictureBoxSizeMode.Zoom;
+            iconVolver.TabIndex = 17;
+            iconVolver.TabStop = false;
+            // 
+            // linkListado
+            // 
+            linkListado.ActiveLinkColor = Color.DodgerBlue;
+            linkListado.AutoSize = true;
+            linkListado.Cursor = Cursors.Hand;
+            linkListado.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            linkListado.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkListado.LinkColor = Color.White;
+            linkListado.Location = new Point(40, 263);
+            linkListado.Name = "linkListado";
+            linkListado.Size = new Size(61, 19);
+            linkListado.TabIndex = 16;
+            linkListado.TabStop = true;
+            linkListado.Text = "Volver";
+            linkListado.TextAlign = ContentAlignment.MiddleCenter;
+            linkListado.VisitedLinkColor = Color.White;
+            linkListado.Click += linkListado_Click;
+            // 
             // UIListadoAsistencia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -199,7 +233,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(linkLabel1);
             Name = "UIListadoAsistencia";
-            Text = "UIListadoAsistencia";
+            Text = "Nombre de la lista aquí";
             Load += UIListadoAsistencia_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -207,6 +241,7 @@
             panelAside.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconVolver).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -224,5 +259,7 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private Label labelFecha;
+        private PictureBox iconVolver;
+        private LinkLabel linkListado;
     }
 }

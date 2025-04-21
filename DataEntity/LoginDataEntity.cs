@@ -1,10 +1,6 @@
-﻿using DataEntity.DataEntity;
-using System;
-using System.Collections.Generic;
+﻿using ControllerEntity;
+using DataEntity.DataEntity;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataEntity
 {
@@ -12,16 +8,11 @@ namespace DataEntity
     {
         private bool credencialesValidas = false;
 
-        public LoginDataEntity()
-        {
-            
-        }
-
         public bool VefCredenciales(string email, string contraseña)
         {
             using (SQLiteConnection conexion = ConexionBD.ObtenerConexion())
             {
-                string query = "SELECT Email, Contraseña FROM Usuario WHERE Email = @xEmail AND Contraseña = @xContraseña;";
+                string query = "SELECT Nombre, Email, Contraseña FROM Usuario WHERE Email = @xEmail AND Contraseña = @xContraseña;";
 
                 using (SQLiteCommand comando = new SQLiteCommand(query, conexion))
                 {

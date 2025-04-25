@@ -1,6 +1,7 @@
 ﻿using ControllerEntity;
 using DataEntity.DataEntity;
 using System.Data.SQLite;
+using UI_Casystem;
 
 namespace DataEntity
 {
@@ -25,6 +26,9 @@ namespace DataEntity
                         if (lector.Read())
                         {
                             credencialesValidas = true;
+                            Global.CurrentUser.Nombre = lector["Nombre"].ToString();
+                            Global.CurrentUser.Email = lector["Email"].ToString();
+                            Global.CurrentUser.Contraseña = lector["Contraseña"].ToString();
                         }
                     }
                 }

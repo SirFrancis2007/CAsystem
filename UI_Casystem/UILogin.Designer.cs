@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UILogin));
             panel1 = new Panel();
             inputPassword = new TextBox();
             inputEmail = new TextBox();
@@ -146,6 +147,7 @@
             ClientSize = new Size(914, 550);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "UILogin";
             Text = "Inicio de Sesión";
             Load += UILogin_Load;

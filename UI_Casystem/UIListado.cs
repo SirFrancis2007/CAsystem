@@ -13,7 +13,6 @@ namespace UI_Casystem
 {
     public partial class UIListado : Form
     {
-        RegistroController RC = new();
 
         public UIListado()
         {
@@ -26,8 +25,7 @@ namespace UI_Casystem
             FormBorderStyle = FormBorderStyle.FixedDialog;
 
             labelFecha.Text = $"Hoy es: {DateTime.Now:dd/MM/yyyy}";
-            labelSaludo.Text = $"Hola, {RC.CurrentUser.Nombre}";
-            label1.Text = $"{RC.CurrentUser.Nombre}, {RC.CurrentUser.Email}, {RC.CurrentUser.Contraseña}";
+            labelSaludo.Text = $"Bienvenido, {Global.CurrentUser.Nombre}!";
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -53,6 +51,13 @@ namespace UI_Casystem
         {
             UIListadoAsistencia uIListadoAsistencia = new();
             uIListadoAsistencia.Show();
+            Close();
+        }
+
+        private void iconCerrarSesion_Click(object sender, EventArgs e)
+        {
+            UIIndex uIIndex = new();
+            uIIndex.Show();
             Close();
         }
     }

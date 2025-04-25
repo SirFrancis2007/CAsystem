@@ -5,12 +5,10 @@ namespace UI_Casystem
 {
     public partial class UILogin : Form
     {
-        private LoginController _loginController;
 
         public UILogin()
         {
             InitializeComponent();
-            _loginController = new LoginController();
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -51,7 +49,7 @@ namespace UI_Casystem
 
             try
             {
-                bool IngresoUsuario = _loginController.PassCredencial(email, password);
+                bool IngresoUsuario = Global.LC.PassCredencial(email, password);
                 if (IngresoUsuario)
                 {
                     Hide();

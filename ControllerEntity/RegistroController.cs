@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataEntity;
+using UI_Casystem;
 using Models;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -12,7 +13,6 @@ namespace ControllerEntity
 {
     public class RegistroController
     {
-        public Usuario CurrentUser = new();
 
         public void BefInsData(Usuario BefInsUsuario)
         {
@@ -39,17 +39,16 @@ namespace ControllerEntity
 
         public void CreateObjectUser(string xnombre, string xemail, string xcontraseña)
         {
-                CurrentUser.Nombre = xnombre;
-                CurrentUser.Email = xemail;
-                CurrentUser.Contraseña = xcontraseña;
+            Global.CurrentUser.Nombre = xnombre;
+            Global.CurrentUser.Email = xemail;
+            Global.CurrentUser.Contraseña = xcontraseña;
         }
 
         public bool AddNewUser(Usuario NewUser)
         {
             try
             {
-                RegistroDataEntity registroDataEntity = new();
-                return registroDataEntity.MthAddNewUser(NewUser);
+                return Global.RDE.MthAddNewUser(NewUser);
             }
             catch
             {

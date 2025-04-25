@@ -34,20 +34,20 @@
             labelNombreLista = new Label();
             pictureBox1 = new PictureBox();
             panelAside = new Panel();
+            iconVolver = new PictureBox();
             pictureBox3 = new PictureBox();
+            linkListado = new LinkLabel();
             linkLogout = new LinkLabel();
             label3 = new Label();
             linkLabel3 = new LinkLabel();
             pictureBox2 = new PictureBox();
             labelFecha = new Label();
-            iconVolver = new PictureBox();
-            linkListado = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelAside.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconVolver).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconVolver).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -115,6 +115,18 @@
             panelAside.Size = new Size(208, 552);
             panelAside.TabIndex = 7;
             // 
+            // iconVolver
+            // 
+            iconVolver.Cursor = Cursors.Hand;
+            iconVolver.Image = (Image)resources.GetObject("iconVolver.Image");
+            iconVolver.Location = new Point(17, 260);
+            iconVolver.Name = "iconVolver";
+            iconVolver.Size = new Size(25, 25);
+            iconVolver.SizeMode = PictureBoxSizeMode.Zoom;
+            iconVolver.TabIndex = 17;
+            iconVolver.TabStop = false;
+            iconVolver.Click += iconVolver_Click;
+            // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
@@ -125,6 +137,24 @@
             pictureBox3.TabIndex = 9;
             pictureBox3.TabStop = false;
             pictureBox3.Click += pictureBox3_Click;
+            // 
+            // linkListado
+            // 
+            linkListado.ActiveLinkColor = Color.DodgerBlue;
+            linkListado.AutoSize = true;
+            linkListado.Cursor = Cursors.Hand;
+            linkListado.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            linkListado.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkListado.LinkColor = Color.White;
+            linkListado.Location = new Point(40, 263);
+            linkListado.Name = "linkListado";
+            linkListado.Size = new Size(61, 19);
+            linkListado.TabIndex = 16;
+            linkListado.TabStop = true;
+            linkListado.Text = "Volver";
+            linkListado.TextAlign = ContentAlignment.MiddleCenter;
+            linkListado.VisitedLinkColor = Color.White;
+            linkListado.Click += linkListado_Click;
             // 
             // linkLogout
             // 
@@ -191,35 +221,6 @@
             labelFecha.TabIndex = 9;
             labelFecha.Text = "Hoy es: {dia}";
             // 
-            // iconVolver
-            // 
-            iconVolver.Cursor = Cursors.Hand;
-            iconVolver.Image = (Image)resources.GetObject("iconVolver.Image");
-            iconVolver.Location = new Point(17, 260);
-            iconVolver.Name = "iconVolver";
-            iconVolver.Size = new Size(25, 25);
-            iconVolver.SizeMode = PictureBoxSizeMode.Zoom;
-            iconVolver.TabIndex = 17;
-            iconVolver.TabStop = false;
-            // 
-            // linkListado
-            // 
-            linkListado.ActiveLinkColor = Color.DodgerBlue;
-            linkListado.AutoSize = true;
-            linkListado.Cursor = Cursors.Hand;
-            linkListado.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            linkListado.LinkBehavior = LinkBehavior.NeverUnderline;
-            linkListado.LinkColor = Color.White;
-            linkListado.Location = new Point(40, 263);
-            linkListado.Name = "linkListado";
-            linkListado.Size = new Size(61, 19);
-            linkListado.TabIndex = 16;
-            linkListado.TabStop = true;
-            linkListado.Text = "Volver";
-            linkListado.TextAlign = ContentAlignment.MiddleCenter;
-            linkListado.VisitedLinkColor = Color.White;
-            linkListado.Click += linkListado_Click;
-            // 
             // UIListadoAsistencia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -239,9 +240,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelAside.ResumeLayout(false);
             panelAside.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconVolver).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconVolver).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

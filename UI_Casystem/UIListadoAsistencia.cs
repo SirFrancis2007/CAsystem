@@ -61,5 +61,12 @@ namespace UI_Casystem
             uIListado.Show();
             Close();
         }
+
+        private void iconVolver_Click(object sender, EventArgs e)
+        {
+            UIListado uIListado = new();
+            uIListado.Show();
+            Close();
+        }
     }
 }

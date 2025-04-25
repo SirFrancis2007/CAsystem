@@ -38,16 +38,15 @@
             labelFecha = new Label();
             label3 = new Label();
             linkLabel1 = new LinkLabel();
-            labelSaludo = new Label();
-            dgvPrincipal = new DataGridView();
+            dgvListado = new DataGridView();
             label4 = new Label();
             iconNuevaLista = new PictureBox();
             linkNuevaLista = new LinkLabel();
-            label1 = new Label();
+            labelSaludo = new Label();
             panelAside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconCerrarSesion).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvPrincipal).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvListado).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconNuevaLista).BeginInit();
             SuspendLayout();
             // 
@@ -86,6 +85,7 @@
             iconCerrarSesion.SizeMode = PictureBoxSizeMode.Zoom;
             iconCerrarSesion.TabIndex = 11;
             iconCerrarSesion.TabStop = false;
+            iconCerrarSesion.Click += iconCerrarSesion_Click;
             // 
             // linkLogout
             // 
@@ -151,24 +151,13 @@
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Agregar listado";
             // 
-            // labelSaludo
+            // dgvListado
             // 
-            labelSaludo.AutoSize = true;
-            labelSaludo.Font = new Font("Tahoma", 12F, FontStyle.Bold);
-            labelSaludo.ForeColor = Color.White;
-            labelSaludo.Location = new Point(227, 42);
-            labelSaludo.Name = "labelSaludo";
-            labelSaludo.Size = new Size(143, 19);
-            labelSaludo.TabIndex = 1;
-            labelSaludo.Text = "Hola, {nombre}.";
-            // 
-            // dgvPrincipal
-            // 
-            dgvPrincipal.AllowUserToAddRows = false;
-            dgvPrincipal.AllowUserToDeleteRows = false;
-            dgvPrincipal.BackgroundColor = Color.FromArgb(24, 28, 35);
-            dgvPrincipal.BorderStyle = BorderStyle.None;
-            dgvPrincipal.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvListado.AllowUserToAddRows = false;
+            dgvListado.AllowUserToDeleteRows = false;
+            dgvListado.BackgroundColor = Color.FromArgb(24, 28, 35);
+            dgvListado.BorderStyle = BorderStyle.None;
+            dgvListado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.Transparent;
             dataGridViewCellStyle1.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -176,14 +165,14 @@
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvPrincipal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPrincipal.Location = new Point(227, 154);
-            dgvPrincipal.Name = "dgvPrincipal";
-            dgvPrincipal.ReadOnly = true;
-            dgvPrincipal.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgvPrincipal.Size = new Size(665, 380);
-            dgvPrincipal.TabIndex = 3;
+            dgvListado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvListado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvListado.Location = new Point(227, 154);
+            dgvListado.Name = "dgvListado";
+            dgvListado.ReadOnly = true;
+            dgvListado.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvListado.Size = new Size(665, 380);
+            dgvListado.TabIndex = 3;
             // 
             // label4
             // 
@@ -225,16 +214,16 @@
             linkNuevaLista.TextAlign = ContentAlignment.MiddleCenter;
             linkNuevaLista.LinkClicked += linkLabel2_LinkClicked;
             // 
-            // label1
+            // labelSaludo
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Tahoma", 12F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(227, 75);
-            label1.Name = "label1";
-            label1.Size = new Size(162, 19);
-            label1.TabIndex = 14;
-            label1.Text = "nombre email pass";
+            labelSaludo.AutoSize = true;
+            labelSaludo.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            labelSaludo.ForeColor = Color.White;
+            labelSaludo.Location = new Point(227, 42);
+            labelSaludo.Name = "labelSaludo";
+            labelSaludo.Size = new Size(143, 19);
+            labelSaludo.TabIndex = 1;
+            labelSaludo.Text = "Hola, {nombre}.";
             // 
             // UIListado
             // 
@@ -242,11 +231,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(19, 22, 28);
             ClientSize = new Size(914, 550);
-            Controls.Add(label1);
             Controls.Add(iconNuevaLista);
             Controls.Add(label4);
             Controls.Add(linkNuevaLista);
-            Controls.Add(dgvPrincipal);
+            Controls.Add(dgvListado);
             Controls.Add(panelAside);
             Controls.Add(labelSaludo);
             Name = "UIListado";
@@ -256,7 +244,7 @@
             panelAside.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconCerrarSesion).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvPrincipal).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvListado).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconNuevaLista).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -270,13 +258,12 @@
         private LinkLabel linkLabel1;
         private Label labelSaludo;
         private Label labelFecha;
-        private DataGridView dgvPrincipal;
+        private DataGridView dgvListado;
         private Label label4;
         private PictureBox iconCerrarSesion;
         private LinkLabel linkLogout;
         private PictureBox iconNuevaLista;
         private LinkLabel linkNuevaLista;
         private Button button1;
-        private Label label1;
     }
 }

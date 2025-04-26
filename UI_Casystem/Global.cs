@@ -15,5 +15,8 @@ namespace UI_Casystem
         public static RegistroController RC = new();
         public static Usuario CurrentUser = new();
         public static LoginController LC = new();
+        public static Listado GlobalLista = new();
+        public static ListadoDataEntity LDE = new();
+        public static ListadoController LDC = new();
     }
 }

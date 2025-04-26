@@ -12,7 +12,8 @@ namespace UI_Casystem
 {
     public partial class UIListadoAsistencia : Form
     {
-        public UIListadoAsistencia()
+        // recibe el nombre de la tabla seleccionada de UI_Listado
+        public UIListadoAsistencia(string NombreTabla)
         {
             InitializeComponent();
         }
@@ -57,8 +58,6 @@ namespace UI_Casystem
 
         private void linkListado_Click(object sender, EventArgs e)
         {
-            UIListado uIListado = new();
-            uIListado.Show();
             Close();
         }
 

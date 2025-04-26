@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UI_Casystem;
+﻿using DataEntity.DataEntity;
+using System.Data;
+using System.Data.SQLite;
 
 namespace DataEntity
 {
@@ -12,5 +9,67 @@ namespace DataEntity
         // Crea un método "TraerTablas" que reciba por parámetro un DataGridView.
         // Dentro del método hace una query con un select a la tabla Listado según
         // el email de la persona y llena el DataGridView con los datos obtenidos.
+
+        public bool InsertVef;
+        public static uint idLista; // idLista => id de la tabla Listado
+        DataTable DGVListado = new DataTable(); // DGV => DataGridView
+
+        public bool NuevaLista(string NombreLista, string email)
+        {
+            try
+            {
+                using (SQLiteConnection conexion = ConexionBD.ObtenerConexion())
+                {
+                    string query = "INSERT INTO Listado (NombreLista, EmailUsuario) VALUES (@xNombreLista, @xemail)";
+
+                    using (SQLiteCommand comando = new SQLiteCommand(query, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@xNombreLista", NombreLista);
+                        comando.Parameters.AddWithValue("@xemail", email);
+
+                        int filasAfectadas = comando.ExecuteNonQuery();
+                        InsertVef = filasAfectadas > 0;
+                    }
+                }
+                return InsertVef;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public DataTable TraerListado(string Email)
+        {
+            //query a sqlite
+            var query = "SELECT idLista, NombreLista FROM Listado WHERE EmailUsuario = @xEmail";
+            try
+            {
+                //establecer conexion
+                using (SQLiteConnection conexion = ConexionBD.ObtenerConexion())
+                {
+                    using (SQLiteCommand comando = new SQLiteCommand(query, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@xEmail", Email);
+                        SQLiteDataAdapter adapter = new SQLiteDataAdapter(comando);
+                        adapter.Fill(DGVListado);
+
+                        using(SQLiteDataReader lector = comando.ExecuteReader())
+                        {
+                            if (lector.Read())
+                            {
+                                idLista = idLista;
+                            }
+                        }
+
+                        return DGVListado;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el listado: " + ex.Message);
+            }
+        }
     }
 }

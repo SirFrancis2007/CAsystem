@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataEntity;
-using UI_Casystem;
+﻿using UI_Casystem;
 using Models;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ControllerEntity
 {

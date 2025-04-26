@@ -1,13 +1,13 @@
-﻿using ControllerEntity;
-using DataEntity.DataEntity;
+﻿using DataEntity.DataEntity;
 using System.Data.SQLite;
-using UI_Casystem;
+
 
 namespace DataEntity
 {
     public class LoginDataEntity
     {
         private bool credencialesValidas = false;
+        public static string EmailUsuarioActual { get; private set; }
 
         public bool VefCredenciales(string email, string contraseña)
         {
@@ -26,14 +26,11 @@ namespace DataEntity
                         if (lector.Read())
                         {
                             credencialesValidas = true;
-                            Global.CurrentUser.Nombre = lector["Nombre"].ToString();
-                            Global.CurrentUser.Email = lector["Email"].ToString();
-                            Global.CurrentUser.Contraseña = lector["Contraseña"].ToString();
+                            EmailUsuarioActual = email; 
                         }
                     }
                 }
             }
-
             return credencialesValidas;
         }
     }

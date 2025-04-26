@@ -44,7 +44,23 @@ namespace UI_Casystem
 
         private void btnAgregarAsistencia_Click(object sender, EventArgs e)
         {
+            GetContent();
 
+        }
+
+        private void GetContent()
+        {
+            string nombre = inputNombre.Text;
+            string departamente = inputDepartamento.Text;
+            bool asistencia = checkBox1.Checked; // check de asistencia
+
+            // Validar los campos
+            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(departamente))
+            {
+                MessageBox.Show("Por favor, completa todos los campos.");
+                return;
+            }
+            return;
         }
     }
 }

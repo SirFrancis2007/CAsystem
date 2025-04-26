@@ -26,6 +26,10 @@ namespace UI_Casystem
 
             labelFecha.Text = $"Hoy es: {DateTime.Now:dd/MM/yyyy}";
             labelSaludo.Text = $"Bienvenido, {Global.CurrentUser.Nombre}!";
+
+            // cada vez que se carga la ventana, se cargan los datos
+            dgvListado.DataSource = null;
+            CargarDatosListado();
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -49,9 +53,9 @@ namespace UI_Casystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UIListadoAsistencia uIListadoAsistencia = new();
-            uIListadoAsistencia.Show();
-            Close();
+            //UIListadoAsistencia uIListadoAsistencia = new();
+            //uIListadoAsistencia.Show();
+            //Close();
         }
 
         private void iconCerrarSesion_Click(object sender, EventArgs e)
@@ -59,6 +63,33 @@ namespace UI_Casystem
             UIIndex uIIndex = new();
             uIIndex.Show();
             Close();
+        }
+
+        private void dgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow filaSeleccionada = dgvListado.Rows[e.RowIndex];
+
+                string NombreTabla = Convert.ToString(filaSeleccionada.Cells["NombreLista"]);
+
+                UIListadoAsistencia ListadoAsistencia = new(NombreTabla);
+                ListadoAsistencia.Show();
+            }
+        }
+
+        private void CargarDatosListado ()
+        {
+            try
+            {
+                DataTable ResultadosListado = Global.LDC.MthGetList();
+                // carga en el datagridview
+                dgvListado.DataSource = ResultadosListado;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al traer los datos del Gran Premio: " + ex.Message);
+            }
         }
     }
 }

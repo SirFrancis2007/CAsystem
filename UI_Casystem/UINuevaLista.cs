@@ -45,7 +45,37 @@ namespace UI_Casystem
 
         private void btnNuevoListado_Click(object sender, EventArgs e)
         {
+            string nombre = inputNombre.Text;
+            GetNombre(nombre);
+            try
+            {
+                // enviar el nombre a CL
+                Global.LDC.CreateObjLista(nombre);
+                
+                var insertado  = Global.LDC.MthAddNewList(nombre);
+                if (insertado)
+                {
+                    MessageBox.Show($"Lista {nombre} fue creada");
+                }
+                else
+                {
+                    MessageBox.Show($"Error al crear la lista {nombre}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error al crear la lista.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        internal string GetNombre(string nombre)
+        {
+            if (string.IsNullOrWhiteSpace(inputNombre.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un nombre para la lista.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return string.Empty;
+            }
+            return inputNombre.Text;
         }
     }
 }

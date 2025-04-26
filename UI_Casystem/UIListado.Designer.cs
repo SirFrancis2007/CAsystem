@@ -173,6 +173,7 @@
             dgvListado.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvListado.Size = new Size(665, 380);
             dgvListado.TabIndex = 3;
+            dgvListado.CellContentClick += dgvListado_CellContentClick;
             // 
             // label4
             // 

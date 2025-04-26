@@ -140,8 +140,9 @@
             Controls.Add(iconVolver);
             Controls.Add(linkListado);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "UINuevaLista";
-            Text = "Crear Nueva Lista";
+            Text = "Nueva Lista";
             Load += UINewList_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

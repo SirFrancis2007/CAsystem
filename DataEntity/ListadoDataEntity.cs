@@ -1,6 +1,7 @@
 ﻿using DataEntity.DataEntity;
 using System.Data;
 using System.Data.SQLite;
+using UI_Casystem;
 
 namespace DataEntity
 {
@@ -11,7 +12,7 @@ namespace DataEntity
         // el email de la persona y llena el DataGridView con los datos obtenidos.
 
         public bool InsertVef;
-        public static uint idLista; // idLista => id de la tabla Listado
+        public static uint xidLista; // idLista => id de la tabla Listado
         DataTable DGVListado = new DataTable(); // DGV => DataGridView
 
         public bool NuevaLista(string NombreLista, string email)
@@ -41,35 +42,41 @@ namespace DataEntity
 
         public DataTable TraerListado(string Email)
         {
-            //query a sqlite
+            // Query a SQLite
             var query = "SELECT idLista, NombreLista FROM Listado WHERE EmailUsuario = @xEmail";
+            DataTable resultTable = new DataTable();
+
             try
             {
-                //establecer conexion
                 using (SQLiteConnection conexion = ConexionBD.ObtenerConexion())
                 {
                     using (SQLiteCommand comando = new SQLiteCommand(query, conexion))
                     {
                         comando.Parameters.AddWithValue("@xEmail", Email);
-                        SQLiteDataAdapter adapter = new SQLiteDataAdapter(comando);
-                        adapter.Fill(DGVListado);
-
-                        using(SQLiteDataReader lector = comando.ExecuteReader())
+                        using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(comando))
                         {
-                            if (lector.Read())
-                            {
-                                idLista = idLista;
-                            }
+                            adapter.Fill(resultTable);
                         }
-
-                        return DGVListado;
                     }
                 }
+
+                // Si el DataTable tiene filas, podemos actualizar el CurrentListId
+                if (resultTable.Rows.Count > 0)
+                {
+                    SessionData.CurrentListId = Convert.ToUInt32(resultTable.Rows[0]["idLista"]);
+                }
+                else
+                {
+                    SessionData.CurrentListId = 0; // O un valor seguro indicando "sin listas"
+                }
+
+                return resultTable;
             }
             catch (Exception ex)
             {
                 throw new Exception("Error al obtener el listado: " + ex.Message);
             }
         }
+
     }
 }

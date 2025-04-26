@@ -18,5 +18,8 @@ namespace UI_Casystem
         public static Listado GlobalLista = new();
         public static ListadoDataEntity LDE = new();
         public static ListadoController LDC = new();
+        public static Asistente AsistenciaModel = new();
+        public static AsistenciaDataEntity ADE = new();
+        public static AsistenciaController AC = new();
     }
 }

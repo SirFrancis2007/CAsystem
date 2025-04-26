@@ -13,9 +13,13 @@ namespace UI_Casystem
     public partial class UIListadoAsistencia : Form
     {
         // recibe el nombre de la tabla seleccionada de UI_Listado
-        public UIListadoAsistencia(string NombreTabla)
+        string nombreTabla;
+        uint xidListado;
+        public UIListadoAsistencia(string NombreTabla, uint idListado)
         {
             InitializeComponent();
+            nombreTabla = NombreTabla;
+            xidListado = idListado;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -28,6 +32,12 @@ namespace UI_Casystem
             FormBorderStyle = FormBorderStyle.FixedDialog;
             CenterToParent();
             labelFecha.Text = $"Hoy es: {DateTime.Now:dd/MM/yyyy}";
+
+            labelNombreLista.Text = nombreTabla;
+            DGVListadoAsistencia.DataSource = null;
+            DGVListadoAsistencia.RowCount = 0;
+            DGVListadoAsistencia.ColumnCount = 0;
+            CargarDatosDGV();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -66,6 +76,26 @@ namespace UI_Casystem
             UIListado uIListado = new();
             uIListado.Show();
             Close();
+        }
+
+        //Mth de cargar los datos en el datagridview
+        private void CargarDatosDGV()
+        {
+            try
+            {
+                DataTable ResultadosListado = Global.AC.MthTraerListadoAsistencia(nombreTabla, (int)xidListado);
+                // carga en el datagridview
+                DGVListadoAsistencia.DataSource = ResultadosListado;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al traer los datos del Gran Premio: " + ex.Message);
+            }
+        }
+
+        private void labelNombreLista_Click(object sender, EventArgs e)
+        {
+            labelNombreLista.Text = nombreTabla;
         }
     }
 }

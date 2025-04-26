@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UIListadoAsistencia));
-            dataGridView1 = new DataGridView();
+            DGVListadoAsistencia = new DataGridView();
             linkLabel1 = new LinkLabel();
             labelNombreLista = new Label();
             pictureBox1 = new PictureBox();
@@ -42,7 +42,7 @@
             linkLabel3 = new LinkLabel();
             pictureBox2 = new PictureBox();
             labelFecha = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVListadoAsistencia).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelAside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconVolver).BeginInit();
@@ -50,18 +50,24 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // DGVListadoAsistencia
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.BackgroundColor = Color.FromArgb(24, 28, 35);
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(227, 100);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(665, 429);
-            dataGridView1.TabIndex = 5;
+            DGVListadoAsistencia.AllowUserToAddRows = false;
+            DGVListadoAsistencia.AllowUserToDeleteRows = false;
+            DGVListadoAsistencia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            DGVListadoAsistencia.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DGVListadoAsistencia.BackgroundColor = Color.FromArgb(24, 28, 35);
+            DGVListadoAsistencia.BorderStyle = BorderStyle.None;
+            DGVListadoAsistencia.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            DGVListadoAsistencia.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            DGVListadoAsistencia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVListadoAsistencia.Location = new Point(227, 100);
+            DGVListadoAsistencia.MultiSelect = false;
+            DGVListadoAsistencia.Name = "DGVListadoAsistencia";
+            DGVListadoAsistencia.ReadOnly = true;
+            DGVListadoAsistencia.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            DGVListadoAsistencia.Size = new Size(665, 429);
+            DGVListadoAsistencia.TabIndex = 5;
             // 
             // linkLabel1
             // 
@@ -89,6 +95,7 @@
             labelNombreLista.Size = new Size(182, 19);
             labelNombreLista.TabIndex = 6;
             labelNombreLista.Text = "*Nombre de la Lista*";
+            labelNombreLista.Click += labelNombreLista_Click;
             // 
             // pictureBox1
             // 
@@ -231,12 +238,13 @@
             Controls.Add(pictureBox2);
             Controls.Add(panelAside);
             Controls.Add(labelNombreLista);
-            Controls.Add(dataGridView1);
+            Controls.Add(DGVListadoAsistencia);
             Controls.Add(linkLabel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "UIListadoAsistencia";
-            Text = "Nombre de la lista aquí";
+            Text = "Listado";
             Load += UIListadoAsistencia_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVListadoAsistencia).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelAside.ResumeLayout(false);
             panelAside.PerformLayout();
@@ -249,7 +257,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView DGVListadoAsistencia;
         private LinkLabel linkLabel1;
         private Label labelNombreLista;
         private PictureBox pictureBox1;

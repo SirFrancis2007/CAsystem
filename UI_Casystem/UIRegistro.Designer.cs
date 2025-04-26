@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UIRegistro));
             panel1 = new Panel();
             inputPassword = new TextBox();
             inputEmail = new TextBox();
@@ -160,9 +161,10 @@
             ClientSize = new Size(914, 550);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "UIRegistro";
-            Text = "UIRegistro";
+            Text = "Registro";
             Load += UIRegistro_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

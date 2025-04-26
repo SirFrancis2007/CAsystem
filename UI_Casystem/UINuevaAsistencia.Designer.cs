@@ -157,8 +157,9 @@
             Controls.Add(iconVolver);
             Controls.Add(linkListado);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "UINuevaAsistencia";
-            Text = "UINewAsistent";
+            Text = "Nueva asistencia";
             Load += UINewAsistent_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

@@ -52,6 +52,9 @@ namespace UI_Casystem
                 bool IngresoUsuario = Global.LC.PassCredencial(email, password);
                 if (IngresoUsuario)
                 {
+                    SessionData.CurrentListId = 0;
+                    SessionData.CurrentUserEmail = "";
+
                     Hide();
                     UIListado InterfazListado = new();
                     InterfazListado.Show();

@@ -119,6 +119,7 @@
             Controls.Add(labelCopyright);
             Controls.Add(btnRegistro);
             Controls.Add(btnLogin);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             Name = "UIIndex";

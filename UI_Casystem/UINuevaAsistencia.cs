@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,7 +46,16 @@ namespace UI_Casystem
         private void btnAgregarAsistencia_Click(object sender, EventArgs e)
         {
             GetContent();
-
+            // Guardar la asistencia
+            bool insertado = Global.AC.SaveAsistencia(Global.AsistenciaModel);
+            if (insertado)
+            {
+                MessageBox.Show("Asistencia guardada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar la asistencia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void GetContent()
@@ -60,7 +70,8 @@ namespace UI_Casystem
                 MessageBox.Show("Por favor, completa todos los campos.");
                 return;
             }
-            return;
+
+            Global.AC.CreateObjAsistencia(nombre, departamente, asistencia);
         }
     }
 }

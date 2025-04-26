@@ -13,10 +13,16 @@ namespace UI_Casystem
 {
     public partial class UIListado : Form
     {
-
+        string Nombre = Global.CurrentUser.Nombre;
         public UIListado()
         {
             InitializeComponent();
+            if (dgvListado.Rows.Count > 0)
+            {
+                dgvListado.DataSource = null;
+                dgvListado.Rows.Clear();
+                dgvListado.Columns.Clear();
+            }
         }
 
         private void UIListado_Load(object sender, EventArgs e)
@@ -25,10 +31,13 @@ namespace UI_Casystem
             FormBorderStyle = FormBorderStyle.FixedDialog;
 
             labelFecha.Text = $"Hoy es: {DateTime.Now:dd/MM/yyyy}";
-            labelSaludo.Text = $"Bienvenido, {Global.CurrentUser.Nombre}!";
+            labelSaludo.Text = $"Bienvenido, {Nombre}!";
 
             // cada vez que se carga la ventana, se cargan los datos
             dgvListado.DataSource = null;
+            dgvListado.Rows.Clear();
+            dgvListado.Columns.Clear();
+
             CargarDatosListado();
         }
 
@@ -71,17 +80,27 @@ namespace UI_Casystem
             {
                 DataGridViewRow filaSeleccionada = dgvListado.Rows[e.RowIndex];
 
-                string NombreTabla = Convert.ToString(filaSeleccionada.Cells["NombreLista"]);
+                string NombreTabla = filaSeleccionada.Cells["NombreLista"].Value.ToString();
+                uint idListado = (uint)Convert.ToInt32(filaSeleccionada.Cells["IdLista"].Value);
 
-                UIListadoAsistencia ListadoAsistencia = new(NombreTabla);
-                ListadoAsistencia.Show();
+                SessionData.CurrentListId = (uint)idListado;
+
+                UIListadoAsistencia listadoAsistencia = new UIListadoAsistencia(NombreTabla, idListado);
+                listadoAsistencia.Show();
             }
         }
+
 
         private void CargarDatosListado ()
         {
             try
             {
+                if (dgvListado.Rows.Count > 0)
+                {
+                    dgvListado.DataSource = null;
+                    dgvListado.Rows.Clear();
+                    dgvListado.Columns.Clear();
+                }
                 DataTable ResultadosListado = Global.LDC.MthGetList();
                 // carga en el datagridview
                 dgvListado.DataSource = ResultadosListado;

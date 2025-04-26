@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UICarga));
             label1 = new Label();
             progressBar1 = new ProgressBar();
             PorcentajeCarga = new Label();
@@ -103,9 +104,13 @@
             Controls.Add(PorcentajeCarga);
             Controls.Add(progressBar1);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "UICarga";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "UICarga";
+            Text = "Bienvenido ";
             Load += UICarga_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

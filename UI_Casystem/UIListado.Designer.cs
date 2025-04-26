@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UIListado));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panelAside = new Panel();
             button1 = new Button();
             iconCerrarSesion = new PictureBox();
@@ -158,14 +158,14 @@
             dgvListado.BackgroundColor = Color.FromArgb(24, 28, 35);
             dgvListado.BorderStyle = BorderStyle.None;
             dgvListado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Transparent;
-            dataGridViewCellStyle1.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvListado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Transparent;
+            dataGridViewCellStyle2.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvListado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvListado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvListado.Location = new Point(227, 154);
             dgvListado.Name = "dgvListado";
@@ -238,8 +238,9 @@
             Controls.Add(dgvListado);
             Controls.Add(panelAside);
             Controls.Add(labelSaludo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "UIListado";
-            Text = "Inicio";
+            Text = "Listados";
             Load += UIListado_Load;
             panelAside.ResumeLayout(false);
             panelAside.PerformLayout();

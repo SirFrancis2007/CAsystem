@@ -148,6 +148,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "UILogin";
             Text = "Inicio de Sesión";
             Load += UILogin_Load;

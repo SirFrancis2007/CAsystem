@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UIListado));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panelAside = new Panel();
             button1 = new Button();
             iconCerrarSesion = new PictureBox();
@@ -155,22 +157,43 @@
             // 
             dgvListado.AllowUserToAddRows = false;
             dgvListado.AllowUserToDeleteRows = false;
+            dgvListado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvListado.BackgroundColor = Color.FromArgb(24, 28, 35);
             dgvListado.BorderStyle = BorderStyle.None;
+            dgvListado.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvListado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Ebrima", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(24, 28, 35);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(39, 47, 58);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvListado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvListado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.Transparent;
-            dataGridViewCellStyle2.Font = new Font("Ebrima", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 28, 35);
+            dataGridViewCellStyle2.Font = new Font("Ebrima", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvListado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvListado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvListado.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvListado.EnableHeadersVisualStyles = false;
+            dgvListado.GridColor = Color.FromArgb(24, 28, 35);
             dgvListado.Location = new Point(227, 154);
             dgvListado.Name = "dgvListado";
             dgvListado.ReadOnly = true;
             dgvListado.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(24, 28, 35);
+            dataGridViewCellStyle3.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(24, 28, 35);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvListado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvListado.RowHeadersVisible = false;
             dgvListado.Size = new Size(665, 380);
             dgvListado.TabIndex = 3;
             dgvListado.CellContentClick += dgvListado_CellContentClick;
@@ -239,6 +262,7 @@
             Controls.Add(panelAside);
             Controls.Add(labelSaludo);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "UIListado";
             Text = "Listados";
             Load += UIListado_Load;

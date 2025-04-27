@@ -23,6 +23,8 @@ namespace UI_Casystem
                 dgvListado.Rows.Clear();
                 dgvListado.Columns.Clear();
             }
+
+            button1.Visible = false;
         }
 
         private void UIListado_Load(object sender, EventArgs e)
@@ -31,7 +33,7 @@ namespace UI_Casystem
             FormBorderStyle = FormBorderStyle.FixedDialog;
 
             labelFecha.Text = $"Hoy es: {DateTime.Now:dd/MM/yyyy}";
-            labelSaludo.Text = $"Bienvenido, {Nombre}!";
+            labelSaludo.Text = $"¡Bienvenido a CAsystem!";
 
             // cada vez que se carga la ventana, se cargan los datos
             dgvListado.DataSource = null;
@@ -39,6 +41,7 @@ namespace UI_Casystem
             dgvListado.Columns.Clear();
 
             CargarDatosListado();
+            dgvListado.Columns["idLista"].Visible = false;
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -85,6 +88,7 @@ namespace UI_Casystem
 
                 SessionData.CurrentListId = (uint)idListado;
 
+                Hide();
                 UIListadoAsistencia listadoAsistencia = new UIListadoAsistencia(NombreTabla, idListado);
                 listadoAsistencia.Show();
             }

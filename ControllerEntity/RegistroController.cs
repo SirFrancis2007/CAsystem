@@ -1,5 +1,6 @@
 ﻿using UI_Casystem;
 using Models;
+using System.Text.RegularExpressions;
 
 namespace ControllerEntity
 {
@@ -9,7 +10,17 @@ namespace ControllerEntity
         public void BefInsData(Usuario BefInsUsuario)
         {
             ValidateUserInput(BefInsUsuario);
+            VefEmail(BefInsUsuario);
             AddNewUser(BefInsUsuario);
+        }
+
+        private bool VefEmail (Usuario usuario)
+        {
+            if (string.IsNullOrWhiteSpace(usuario.Email))
+                return false;
+
+            string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            return Regex.IsMatch(usuario.Email, pattern);
         }
 
         public bool ValidateUserInput(Usuario BefInsUsuario)

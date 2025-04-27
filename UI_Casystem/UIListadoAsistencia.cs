@@ -15,6 +15,9 @@ namespace UI_Casystem
         // recibe el nombre de la tabla seleccionada de UI_Listado
         string nombreTabla;
         uint xidListado;
+        public uint CantAsistentes;
+        public uint CantFaltantes;
+
         public UIListadoAsistencia(string NombreTabla, uint idListado)
         {
             InitializeComponent();
@@ -33,11 +36,14 @@ namespace UI_Casystem
             CenterToParent();
             labelFecha.Text = $"Hoy es: {DateTime.Now:dd/MM/yyyy}";
 
-            labelNombreLista.Text = nombreTabla;
+            labelNombreLista.Text = $"Estas en el listado: {nombreTabla}";
             DGVListadoAsistencia.DataSource = null;
             DGVListadoAsistencia.RowCount = 0;
             DGVListadoAsistencia.ColumnCount = 0;
             CargarDatosDGV();
+
+            DAT.Text = $"Asistencia confirmada: {CantAsistentes}";
+            DAF.Text = $"Asistencia no confirmada: {CantFaltantes}";
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -68,6 +74,8 @@ namespace UI_Casystem
 
         private void linkListado_Click(object sender, EventArgs e)
         {
+            UIListado uIListado = new();
+            uIListado.Show();
             Close();
         }
 
@@ -86,16 +94,33 @@ namespace UI_Casystem
                 DataTable ResultadosListado = Global.AC.MthTraerListadoAsistencia(nombreTabla, (int)xidListado);
                 // carga en el datagridview
                 DGVListadoAsistencia.DataSource = ResultadosListado;
+
+                GetDataAsistencia(ResultadosListado);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al traer los datos del Gran Premio: " + ex.Message);
+                MessageBox.Show("Error al traer los datos: " + ex.Message);
             }
         }
 
         private void labelNombreLista_Click(object sender, EventArgs e)
         {
             labelNombreLista.Text = nombreTabla;
+        }
+
+        private void GetDataAsistencia (DataTable ResultadosListado)
+        {
+            foreach (DataRow fila in ResultadosListado.Rows)
+            {
+                if (fila["Asistencia"] != DBNull.Value)
+                {
+                    bool asistio = Convert.ToBoolean(fila["Asistencia"]);
+                    if (asistio == true)
+                        CantAsistentes++; // TRUE
+                    else
+                        CantFaltantes++; // FALSE
+                }
+            }
         }
     }
 }

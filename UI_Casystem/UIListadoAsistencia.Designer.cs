@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UIListadoAsistencia));
             DGVListadoAsistencia = new DataGridView();
             linkLabel1 = new LinkLabel();
@@ -42,6 +44,8 @@
             linkLabel3 = new LinkLabel();
             pictureBox2 = new PictureBox();
             labelFecha = new Label();
+            DAT = new Label();
+            DAF = new Label();
             ((System.ComponentModel.ISupportInitialize)DGVListadoAsistencia).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelAside.SuspendLayout();
@@ -54,19 +58,36 @@
             // 
             DGVListadoAsistencia.AllowUserToAddRows = false;
             DGVListadoAsistencia.AllowUserToDeleteRows = false;
-            DGVListadoAsistencia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            DGVListadoAsistencia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DGVListadoAsistencia.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             DGVListadoAsistencia.BackgroundColor = Color.FromArgb(24, 28, 35);
             DGVListadoAsistencia.BorderStyle = BorderStyle.None;
             DGVListadoAsistencia.CellBorderStyle = DataGridViewCellBorderStyle.None;
             DGVListadoAsistencia.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 28, 35);
+            dataGridViewCellStyle1.Font = new Font("Ebrima", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(24, 28, 35);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            DGVListadoAsistencia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             DGVListadoAsistencia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVListadoAsistencia.Location = new Point(227, 100);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 28, 35);
+            dataGridViewCellStyle2.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(24, 28, 35);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            DGVListadoAsistencia.DefaultCellStyle = dataGridViewCellStyle2;
+            DGVListadoAsistencia.Location = new Point(227, 132);
             DGVListadoAsistencia.MultiSelect = false;
             DGVListadoAsistencia.Name = "DGVListadoAsistencia";
             DGVListadoAsistencia.ReadOnly = true;
             DGVListadoAsistencia.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            DGVListadoAsistencia.Size = new Size(665, 429);
+            DGVListadoAsistencia.RowHeadersVisible = false;
+            DGVListadoAsistencia.Size = new Size(665, 397);
             DGVListadoAsistencia.TabIndex = 5;
             // 
             // linkLabel1
@@ -76,7 +97,7 @@
             linkLabel1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(740, 55);
+            linkLabel1.Location = new Point(739, 93);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(163, 19);
             linkLabel1.TabIndex = 0;
@@ -88,11 +109,11 @@
             // labelNombreLista
             // 
             labelNombreLista.AutoSize = true;
-            labelNombreLista.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelNombreLista.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelNombreLista.ForeColor = Color.White;
-            labelNombreLista.Location = new Point(227, 42);
+            labelNombreLista.Location = new Point(227, 21);
             labelNombreLista.Name = "labelNombreLista";
-            labelNombreLista.Size = new Size(182, 19);
+            labelNombreLista.Size = new Size(214, 23);
             labelNombreLista.TabIndex = 6;
             labelNombreLista.Text = "*Nombre de la Lista*";
             labelNombreLista.Click += labelNombreLista_Click;
@@ -208,7 +229,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.add;
-            pictureBox2.Location = new Point(727, 53);
+            pictureBox2.Location = new Point(725, 91);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(25, 25);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -228,12 +249,36 @@
             labelFecha.TabIndex = 9;
             labelFecha.Text = "Hoy es: {dia}";
             // 
+            // DAT
+            // 
+            DAT.AutoSize = true;
+            DAT.Font = new Font("Tahoma", 11.25F, FontStyle.Bold);
+            DAT.ForeColor = SystemColors.ControlLightLight;
+            DAT.Location = new Point(227, 66);
+            DAT.Name = "DAT";
+            DAT.Size = new Size(153, 18);
+            DAT.TabIndex = 10;
+            DAT.Text = "CantAsistenciaTrue";
+            // 
+            // DAF
+            // 
+            DAF.AutoSize = true;
+            DAF.Font = new Font("Tahoma", 11.25F, FontStyle.Bold);
+            DAF.ForeColor = SystemColors.ControlLightLight;
+            DAF.Location = new Point(227, 98);
+            DAF.Name = "DAF";
+            DAF.Size = new Size(159, 18);
+            DAF.TabIndex = 11;
+            DAF.Text = "CantAsistenciaFalse";
+            // 
             // UIListadoAsistencia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(19, 22, 28);
             ClientSize = new Size(914, 550);
+            Controls.Add(DAF);
+            Controls.Add(DAT);
             Controls.Add(labelFecha);
             Controls.Add(pictureBox2);
             Controls.Add(panelAside);
@@ -241,6 +286,7 @@
             Controls.Add(DGVListadoAsistencia);
             Controls.Add(linkLabel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "UIListadoAsistencia";
             Text = "Listado";
             Load += UIListadoAsistencia_Load;
@@ -270,5 +316,7 @@
         private Label labelFecha;
         private PictureBox iconVolver;
         private LinkLabel linkListado;
+        private Label DAT;
+        private Label DAF;
     }
 }

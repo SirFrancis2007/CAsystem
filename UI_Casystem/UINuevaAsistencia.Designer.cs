@@ -158,6 +158,7 @@
             Controls.Add(linkListado);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "UINuevaAsistencia";
             Text = "Nueva asistencia";
             Load += UINewAsistent_Load;

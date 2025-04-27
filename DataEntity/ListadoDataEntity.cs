@@ -1,7 +1,6 @@
-﻿using DataEntity.DataEntity;
-using System.Data;
+﻿using System.Data;
 using System.Data.SQLite;
-using UI_Casystem;
+using ControllerEntity;
 
 namespace DataEntity
 {
@@ -63,11 +62,11 @@ namespace DataEntity
                 // Si el DataTable tiene filas, podemos actualizar el CurrentListId
                 if (resultTable.Rows.Count > 0)
                 {
-                    SessionData.CurrentListId = Convert.ToUInt32(resultTable.Rows[0]["idLista"]);
+                    Global.CurrentListId = Convert.ToUInt32(resultTable.Rows[0]["idLista"]);
                 }
                 else
                 {
-                    SessionData.CurrentListId = 0; // O un valor seguro indicando "sin listas"
+                    Global.CurrentListId = 0; // O un valor seguro indicando "sin listas"
                 }
 
                 return resultTable;

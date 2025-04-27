@@ -1,13 +1,5 @@
 ﻿using ControllerEntity;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace UI_Casystem
 {
@@ -86,7 +78,7 @@ namespace UI_Casystem
                 string NombreTabla = filaSeleccionada.Cells["NombreLista"].Value.ToString();
                 uint idListado = (uint)Convert.ToInt32(filaSeleccionada.Cells["IdLista"].Value);
 
-                SessionData.CurrentListId = (uint)idListado;
+                Global.CurrentListId = (uint)idListado;
 
                 Hide();
                 UIListadoAsistencia listadoAsistencia = new UIListadoAsistencia(NombreTabla, idListado);

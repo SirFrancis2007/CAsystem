@@ -12,13 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataEntity\DataEntity.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="UI_Casystem">
-      <HintPath>..\UI_Casystem\bin\Debug\net8.0-windows\UI_Casystem.dll</HintPath>
+    <Reference Include="DataEntity">
+      <HintPath>..\DataEntity\bin\Debug\net8.0\DataEntity.dll</HintPath>
     </Reference>
   </ItemGroup>
 

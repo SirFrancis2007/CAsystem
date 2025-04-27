@@ -1,11 +1,4 @@
-﻿using System;
-using System.Data.SQLite;
-using System.Configuration;
-
-namespace DataEntity
-{
-    using System;
-    using System.Data.SQLite;
+﻿using System.Data.SQLite;
 
     namespace DataEntity
     {
@@ -30,5 +23,3 @@ namespace DataEntity
             }
         }
     }
-
-}

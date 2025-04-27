@@ -23,14 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="DataEntity">
-      <HintPath>bin\Debug\net8.0\DataEntity.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\ControllerEntity\ControllerEntity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Models">
       <HintPath>..\Models\bin\Debug\net8.0\Models.dll</HintPath>
-    </Reference>
-    <Reference Include="UI_Casystem">
-      <HintPath>..\UI_Casystem\bin\Debug\net8.0-windows\UI_Casystem.dll</HintPath>
     </Reference>
   </ItemGroup>
 

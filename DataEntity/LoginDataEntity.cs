@@ -1,4 +1,4 @@
-﻿using DataEntity.DataEntity;
+﻿using DataEntity;
 using System.Data.SQLite;
 
 

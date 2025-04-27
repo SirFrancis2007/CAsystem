@@ -1,8 +1,5 @@
-﻿using DataEntity;
-using UI_Casystem;
-using Models;
+﻿using Models;
 using System.Data;
-using System.Runtime.InteropServices;
 
 namespace ControllerEntity
 {
@@ -13,14 +10,14 @@ namespace ControllerEntity
         public void CreateObjAsistencia(string NombreAsistente, string Departamento, bool CheckAsistencia)
         {
             // Modelo de asistencia
-            uint idLista = SessionData.CurrentListId;
+            uint idLista = Global.CurrentListId;
             Global.AsistenciaModel.idLista = (int)idLista;
             Global.AsistenciaModel.NombreAsistente = NombreAsistente;
             Global.AsistenciaModel.Departamento = Departamento;
             Global.AsistenciaModel.Asistencia = CheckAsistencia;
         }
 
-        // Método para guardar la asistencia
+        //Método para guardar la asistencia
         public bool SaveAsistencia(Asistente asistencia)
         {
             return Global.ADE.MthAddAsistencia(asistencia); // retorna un boleano

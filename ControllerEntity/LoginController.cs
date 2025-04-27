@@ -37,7 +37,8 @@ namespace ControllerEntity
 
         public bool PassCredencial(string email, string password)
         {
-            try { 
+            try
+            {
                 if (!BefVefCredencial(email, password))
                     throw new ArgumentException("Datos no aceptados");
 
@@ -48,6 +49,6 @@ namespace ControllerEntity
             {
                 return false;
             }
-        } 
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ControllerEntity;
 using System.Runtime.InteropServices;
+using ControllerEntity;
 
 namespace UI_Casystem
 {
@@ -52,8 +53,8 @@ namespace UI_Casystem
                 bool IngresoUsuario = Global.LC.PassCredencial(email, password);
                 if (IngresoUsuario)
                 {
-                    SessionData.CurrentListId = 0;
-                    SessionData.CurrentUserEmail = "";
+                    Global.CurrentListId = 0;
+                    Global.CurrentUser.Email = "";
 
                     Hide();
                     UIListado InterfazListado = new();

@@ -1,6 +1,5 @@
 ﻿using System.Data;
 using System.Data.SQLite;
-using ControllerEntity;
 
 namespace DataEntity
 {
@@ -58,17 +57,6 @@ namespace DataEntity
                         }
                     }
                 }
-
-                // Si el DataTable tiene filas, podemos actualizar el CurrentListId
-                if (resultTable.Rows.Count > 0)
-                {
-                    Global.CurrentListId = Convert.ToUInt32(resultTable.Rows[0]["idLista"]);
-                }
-                else
-                {
-                    Global.CurrentListId = 0; // O un valor seguro indicando "sin listas"
-                }
-
                 return resultTable;
             }
             catch (Exception ex)

@@ -41,7 +41,7 @@ namespace UI_Casystem
             bool insertado = Global.AC.SaveAsistencia(Global.AsistenciaModel);
             if (insertado)
             {
-                //MessageBox.Show("Asistencia guardada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Asistencia guardada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

@@ -1,5 +1,4 @@
-﻿using ControllerEntity;
-using Models;
+﻿using Models;
 using System.Data;
 using System.Data.SQLite;
 
@@ -24,7 +23,7 @@ namespace DataEntity
 
                     using (SQLiteCommand comando = new SQLiteCommand(query, conexion))
                     {
-                        comando.Parameters.AddWithValue("@xidLista", Global.CurrentListId);
+                        comando.Parameters.AddWithValue("@xidLista", asistente.idLista);
                         comando.Parameters.AddWithValue("@xNombre", asistente.NombreAsistente);
                         comando.Parameters.AddWithValue("@xDepartamento", asistente.Departamento);
                         comando.Parameters.AddWithValue("@xAsistencia", asistente.Asistencia);

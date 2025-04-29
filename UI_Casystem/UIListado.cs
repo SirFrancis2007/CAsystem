@@ -6,16 +6,11 @@ namespace UI_Casystem
     public partial class UIListado : Form
     {
         string Nombre = Global.CurrentUser.Nombre;
+
         public UIListado()
         {
             InitializeComponent();
-            if (dgvListado.Rows.Count > 0)
-            {
-                dgvListado.DataSource = null;
-                dgvListado.Rows.Clear();
-                dgvListado.Columns.Clear();
-            }
-
+            LimpiarDataGridView();
             button1.Visible = false;
         }
 
@@ -27,11 +22,7 @@ namespace UI_Casystem
             labelFecha.Text = $"Hoy es: {DateTime.Now:dd/MM/yyyy}";
             labelSaludo.Text = $"¡Bienvenido a CAsystem!";
 
-            // cada vez que se carga la ventana, se cargan los datos
-            dgvListado.DataSource = null;
-            dgvListado.Rows.Clear();
-            dgvListado.Columns.Clear();
-
+            LimpiarDataGridView();
             CargarDatosListado();
             dgvListado.Columns["idLista"].Visible = false;
         }
@@ -39,30 +30,24 @@ namespace UI_Casystem
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             UINuevaLista uINuevaLista = new();
-            uINuevaLista.ShowDialog();
+            if (uINuevaLista.ShowDialog() == DialogResult.OK)
+            {
+                // Recargar los datos solo si se creó una nueva lista
+                CargarDatosListado();
+            }
         }
 
         private void iconNuevaLista_Click(object sender, EventArgs e)
         {
             UINuevaLista uINuevaLista = new();
-            uINuevaLista.ShowDialog();
+            if (uINuevaLista.ShowDialog() == DialogResult.OK)
+            {
+                // Recargar los datos solo si se creó una nueva lista
+                CargarDatosListado();
+            }
         }
 
         private void linkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            UIIndex uIIndex = new();
-            uIIndex.Show();
-            Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //UIListadoAsistencia uIListadoAsistencia = new();
-            //uIListadoAsistencia.Show();
-            //Close();
-        }
-
-        private void iconCerrarSesion_Click(object sender, EventArgs e)
         {
             UIIndex uIIndex = new();
             uIIndex.Show();
@@ -86,25 +71,39 @@ namespace UI_Casystem
             }
         }
 
+        private void LimpiarDataGridView()
+        {
+            if (dgvListado.Rows.Count > 0)
+            {
+                dgvListado.DataSource = null;
+                dgvListado.Rows.Clear();
+                dgvListado.Columns.Clear();
+            }
+        }
 
-        private void CargarDatosListado ()
+        private void CargarDatosListado()
         {
             try
             {
-                if (dgvListado.Rows.Count > 0)
-                {
-                    dgvListado.DataSource = null;
-                    dgvListado.Rows.Clear();
-                    dgvListado.Columns.Clear();
-                }
+                LimpiarDataGridView();
                 DataTable ResultadosListado = Global.LDC.MthGetList();
-                // carga en el datagridview
                 dgvListado.DataSource = ResultadosListado;
+
+                // Ocultar columna idLista si existe
+                if (dgvListado.Columns.Contains("idLista"))
+                {
+                    dgvListado.Columns["idLista"].Visible = false;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al traer los datos del Gran Premio: " + ex.Message);
+                MessageBox.Show("Error al traer los datos: " + ex.Message);
             }
+        }
+
+        private void btnlinkRefrescar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CargarDatosListado();
         }
     }
 }

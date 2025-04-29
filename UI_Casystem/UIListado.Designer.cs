@@ -45,11 +45,14 @@
             iconNuevaLista = new PictureBox();
             linkNuevaLista = new LinkLabel();
             labelSaludo = new Label();
+            btnlinkRefrescar = new LinkLabel();
+            pictureBox2 = new PictureBox();
             panelAside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconCerrarSesion).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvListado).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconNuevaLista).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panelAside
@@ -75,7 +78,6 @@
             button1.TabIndex = 12;
             button1.Text = "listadoAsistencia";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // iconCerrarSesion
             // 
@@ -87,7 +89,6 @@
             iconCerrarSesion.SizeMode = PictureBoxSizeMode.Zoom;
             iconCerrarSesion.TabIndex = 11;
             iconCerrarSesion.TabStop = false;
-            iconCerrarSesion.Click += iconCerrarSesion_Click;
             // 
             // linkLogout
             // 
@@ -213,9 +214,9 @@
             // 
             iconNuevaLista.Cursor = Cursors.Hand;
             iconNuevaLista.Image = Properties.Resources.add;
-            iconNuevaLista.Location = new Point(740, 111);
+            iconNuevaLista.Location = new Point(738, 111);
             iconNuevaLista.Name = "iconNuevaLista";
-            iconNuevaLista.Size = new Size(25, 25);
+            iconNuevaLista.Size = new Size(24, 24);
             iconNuevaLista.SizeMode = PictureBoxSizeMode.Zoom;
             iconNuevaLista.TabIndex = 13;
             iconNuevaLista.TabStop = false;
@@ -229,7 +230,7 @@
             linkNuevaLista.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             linkNuevaLista.LinkBehavior = LinkBehavior.NeverUnderline;
             linkNuevaLista.LinkColor = Color.White;
-            linkNuevaLista.Location = new Point(753, 114);
+            linkNuevaLista.Location = new Point(753, 113);
             linkNuevaLista.Name = "linkNuevaLista";
             linkNuevaLista.Size = new Size(139, 19);
             linkNuevaLista.TabIndex = 12;
@@ -249,12 +250,40 @@
             labelSaludo.TabIndex = 1;
             labelSaludo.Text = "Hola, {nombre}.";
             // 
+            // btnlinkRefrescar
+            // 
+            btnlinkRefrescar.ActiveLinkColor = Color.White;
+            btnlinkRefrescar.AutoSize = true;
+            btnlinkRefrescar.Cursor = Cursors.Hand;
+            btnlinkRefrescar.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnlinkRefrescar.LinkBehavior = LinkBehavior.NeverUnderline;
+            btnlinkRefrescar.LinkColor = Color.White;
+            btnlinkRefrescar.Location = new Point(762, 62);
+            btnlinkRefrescar.Name = "btnlinkRefrescar";
+            btnlinkRefrescar.Size = new Size(151, 19);
+            btnlinkRefrescar.TabIndex = 14;
+            btnlinkRefrescar.TabStop = true;
+            btnlinkRefrescar.Text = "Refrescar Listado";
+            btnlinkRefrescar.LinkClicked += btnlinkRefrescar_LinkClicked;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(738, 60);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(24, 24);
+            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox2.TabIndex = 15;
+            pictureBox2.TabStop = false;
+            // 
             // UIListado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(19, 22, 28);
             ClientSize = new Size(914, 550);
+            Controls.Add(pictureBox2);
+            Controls.Add(btnlinkRefrescar);
             Controls.Add(iconNuevaLista);
             Controls.Add(label4);
             Controls.Add(linkNuevaLista);
@@ -272,6 +301,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvListado).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconNuevaLista).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -291,5 +321,7 @@
         private PictureBox iconNuevaLista;
         private LinkLabel linkNuevaLista;
         private Button button1;
+        private LinkLabel btnlinkRefrescar;
+        private PictureBox pictureBox2;
     }
 }

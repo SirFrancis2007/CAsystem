@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UIListadoAsistencia));
             DGVListadoAsistencia = new DataGridView();
             linkLabel1 = new LinkLabel();
@@ -46,12 +46,16 @@
             labelFecha = new Label();
             DAT = new Label();
             DAF = new Label();
+            BtnRefrescar = new Button();
+            pictureBox4 = new PictureBox();
+            Refrescar = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)DGVListadoAsistencia).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelAside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconVolver).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // DGVListadoAsistencia
@@ -64,23 +68,23 @@
             DGVListadoAsistencia.BorderStyle = BorderStyle.None;
             DGVListadoAsistencia.CellBorderStyle = DataGridViewCellBorderStyle.None;
             DGVListadoAsistencia.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(24, 28, 35);
-            dataGridViewCellStyle1.Font = new Font("Ebrima", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(24, 28, 35);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            DGVListadoAsistencia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(24, 28, 35);
+            dataGridViewCellStyle5.Font = new Font("Ebrima", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(24, 28, 35);
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            DGVListadoAsistencia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             DGVListadoAsistencia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(24, 28, 35);
-            dataGridViewCellStyle2.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(24, 28, 35);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            DGVListadoAsistencia.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(24, 28, 35);
+            dataGridViewCellStyle6.Font = new Font("Ebrima", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(24, 28, 35);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            DGVListadoAsistencia.DefaultCellStyle = dataGridViewCellStyle6;
             DGVListadoAsistencia.Location = new Point(227, 132);
             DGVListadoAsistencia.MultiSelect = false;
             DGVListadoAsistencia.Name = "DGVListadoAsistencia";
@@ -97,7 +101,7 @@
             linkLabel1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(739, 93);
+            linkLabel1.Location = new Point(739, 97);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(163, 19);
             linkLabel1.TabIndex = 0;
@@ -271,12 +275,53 @@
             DAF.TabIndex = 11;
             DAF.Text = "CantAsistenciaFalse";
             // 
+            // BtnRefrescar
+            // 
+            BtnRefrescar.FlatStyle = FlatStyle.Popup;
+            BtnRefrescar.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnRefrescar.ForeColor = SystemColors.ControlLightLight;
+            BtnRefrescar.Location = new Point(489, 21);
+            BtnRefrescar.Name = "BtnRefrescar";
+            BtnRefrescar.Size = new Size(167, 26);
+            BtnRefrescar.TabIndex = 18;
+            BtnRefrescar.Text = "Refrescar Listado";
+            BtnRefrescar.UseVisualStyleBackColor = true;
+            BtnRefrescar.Click += BtnRefrescar_Click;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(725, 49);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(24, 24);
+            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox4.TabIndex = 19;
+            pictureBox4.TabStop = false;
+            // 
+            // Refrescar
+            // 
+            Refrescar.ActiveLinkColor = Color.WhiteSmoke;
+            Refrescar.AutoSize = true;
+            Refrescar.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Refrescar.LinkBehavior = LinkBehavior.NeverUnderline;
+            Refrescar.LinkColor = Color.White;
+            Refrescar.Location = new Point(755, 54);
+            Refrescar.Name = "Refrescar";
+            Refrescar.Size = new Size(87, 19);
+            Refrescar.TabIndex = 20;
+            Refrescar.TabStop = true;
+            Refrescar.Text = "Refrescar";
+            Refrescar.LinkClicked += Refrescar_LinkClicked;
+            // 
             // UIListadoAsistencia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(19, 22, 28);
             ClientSize = new Size(914, 550);
+            Controls.Add(Refrescar);
+            Controls.Add(pictureBox4);
+            Controls.Add(BtnRefrescar);
             Controls.Add(DAF);
             Controls.Add(DAT);
             Controls.Add(labelFecha);
@@ -297,6 +342,7 @@
             ((System.ComponentModel.ISupportInitialize)iconVolver).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -318,5 +364,8 @@
         private LinkLabel linkListado;
         private Label DAT;
         private Label DAF;
+        private Button BtnRefrescar;
+        private PictureBox pictureBox4;
+        private LinkLabel Refrescar;
     }
 }

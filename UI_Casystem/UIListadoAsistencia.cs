@@ -11,6 +11,8 @@ namespace UI_Casystem
         public uint CantAsistentes;
         public uint CantFaltantes;
 
+        public DataTable ResultadosListado { get; private set; }
+
         public UIListadoAsistencia(string NombreTabla, uint idListado)
         {
             InitializeComponent();
@@ -34,6 +36,7 @@ namespace UI_Casystem
             DGVListadoAsistencia.RowCount = 0;
             DGVListadoAsistencia.ColumnCount = 0;
             CargarDatosDGV();
+            BtnRefrescar.Visible = false;
 
             DAT.Text = $"Asistencia confirmada: {CantAsistentes}";
             DAF.Text = $"Asistencia no confirmada: {CantFaltantes}";
@@ -80,11 +83,11 @@ namespace UI_Casystem
         }
 
         //Mth de cargar los datos en el datagridview
-        private void CargarDatosDGV()
+        public void CargarDatosDGV()
         {
             try
             {
-                DataTable ResultadosListado = Global.AC.MthTraerListadoAsistencia(nombreTabla, (int)xidListado);
+                ResultadosListado = Global.AC.MthTraerListadoAsistencia(nombreTabla, (int)xidListado);
                 // carga en el datagridview
                 DGVListadoAsistencia.DataSource = ResultadosListado;
 
@@ -101,7 +104,7 @@ namespace UI_Casystem
             labelNombreLista.Text = nombreTabla;
         }
 
-        private void GetDataAsistencia (DataTable ResultadosListado)
+        private void GetDataAsistencia(DataTable ResultadosListado)
         {
             foreach (DataRow fila in ResultadosListado.Rows)
             {
@@ -114,6 +117,16 @@ namespace UI_Casystem
                         CantFaltantes++; // FALSE
                 }
             }
+        }
+
+        private void BtnRefrescar_Click(object sender, EventArgs e)
+        {
+            BtnRefrescar.Visible = false;
+        }
+
+        private void Refrescar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CargarDatosDGV();
         }
     }
 }

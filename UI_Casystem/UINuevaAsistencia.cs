@@ -42,6 +42,7 @@ namespace UI_Casystem
             if (insertado)
             {
                 MessageBox.Show("Asistencia guardada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             else
             {

@@ -48,6 +48,7 @@ namespace UI_Casystem
                 if (insertado)
                 {
                     MessageBox.Show($"Lista {nombre} fue creada");
+                    this.Close();
                 }
                 else
                 {

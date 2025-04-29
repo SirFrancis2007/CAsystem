@@ -22,14 +22,14 @@ namespace UI_Casystem
             CenterToScreen();
             TimePorcentajeCarga.Start();
             FormBorderStyle = FormBorderStyle.FixedDialog;
-
+            button1.Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (progressBar1.Value < 99)
             {
-                progressBar1.Value += 3;
+                progressBar1.Value += 4;
 
                 label1.Text = progressBar1.Value.ToString() + "%";
             }
